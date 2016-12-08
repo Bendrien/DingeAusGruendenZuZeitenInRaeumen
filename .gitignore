@@ -1,0 +1,18 @@
+### LaTeX ###
+# ignore all the files created by Latex in this folder and the sub folders
+
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.dvi
+*.log
+*.toc
+*.tps
+*.run.xml
+
+*.pdf
+*.out
+
+# TexMaker files
+*.synctex.gz
