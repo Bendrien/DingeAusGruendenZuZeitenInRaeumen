@@ -2,7 +2,7 @@ Paper Zusammenfassung
 =====================
 
 
-1. Julian Urbano - Evaluation in Music Information Retrieval
+1. Julián Urbano - Evaluation in Music Information Retrieval
 ------------------------------------------------------------
 
  - MIR is stuck, no good evaluation of algorithms results
@@ -29,7 +29,7 @@ Paper Zusammenfassung
  - Beschreibung verschiedener mathematischer Metriken zum Vergleichen von MIR Algorithmen
 
 
-5. J. Stephen Downie - The Scientic Evaluation of Music Information Retrieval Systems: Foundations and Future
+5. J. Stephen Downie - The Scientific Evaluation of Music Information Retrieval Systems: Foundations and Future
 -------------------------------------------------------------------------------------------------------------
 
  - guter Einstieg
@@ -50,8 +50,8 @@ Paper Zusammenfassung
  - Validierungsprobleme von MGR (Music Genre Recognition) Algorithem der letzten 10 Jahre
 
 
- 8. Bob L. Sturm - Evaluating music emotion recognition
- ------------------------------------------------------
+8. Bob L. Sturm - Evaluating music emotion recognition
+------------------------------------------------------
 
   - wie 7. nur für MER (Music emotion recognition) (happy, sad, ...)
 
