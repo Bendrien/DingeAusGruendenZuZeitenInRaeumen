@@ -3,7 +3,7 @@ import json
 
 def main():
     with open('cleanedRohdaten.json', 'w') as jsonFile:
-        with open('RohdatenShort.csv') as csvfile:
+        with open('Rohdaten.csv') as csvfile:
             reader = csv.DictReader(csvfile, delimiter=";")
             result = []
             idCounter = 0;
