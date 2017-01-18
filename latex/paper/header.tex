@@ -1,0 +1,32 @@
+\documentclass[twocolumn]{article}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+
+\renewcommand*\rmdefault{ppl}
+%\renewcommand*\sfdefault{ppl}
+%\renewcommand*\ttdefault{cmss}
+
+\usepackage[onehalfspacing]{setspace}
+
+\usepackage[automark, headsepline]{scrlayer-scrpage}
+\setlength{\headheight}{\baselineskip}
+\clearpairofpagestyles
+\pagestyle{scrheadings}
+
+\automark{section}
+\ihead{\includegraphics[height=10pt]{akt.png}~\includegraphics[height=10pt]{tu.png}}
+\ohead{\headmark}
+\ofoot*{\pagemark}
+
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{siunitx}
+\sisetup{
+  locale = DE ,
+  per-mode = symbol
+}

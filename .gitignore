@@ -12,6 +12,9 @@
 *.run.xml
 *.fdb_latexmk
 *.fls
+*.lof
+*.lot
+*.asc
 
 *.bib.bak
 *.bib.sav
