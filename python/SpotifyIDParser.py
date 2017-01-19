@@ -25,14 +25,15 @@ def main():
 
                     result.append(entry)
                 else:
-                    print("Something went wrong while getting ID: " + str(entry["ID"])
-                          + " with query: " + str(entry["Query"]))
-                    print(json.dumps(response, sort_keys=True))
                     error = {}
                     error["ID"] = entry["ID"]
                     error["Query"] = entry["Query"]
 
                     fails.append(error)
+
+                    print("Error #" + str(len(fails)) + ": Something went wrong while getting ID: "
+                          + str(entry["ID"]) + " with query: " + str(entry["Query"]))
+                    print(json.dumps(response, sort_keys=True))
 
 
 
