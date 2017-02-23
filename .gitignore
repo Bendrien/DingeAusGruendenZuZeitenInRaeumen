@@ -24,3 +24,6 @@
 
 # TexMaker files
 *.synctex.gz
+
+# Token file
+python/Tokens.py
