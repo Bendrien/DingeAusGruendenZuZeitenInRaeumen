@@ -27,3 +27,9 @@
 
 # Token file
 python/Tokens.py
+
+# intermediate json
+*.json
+*.csv
+*.sav
+python/__pycache__/* 
