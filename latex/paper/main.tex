@@ -1,43 +1,80 @@
-\input{header.tex}
-\chead{\scshape Fachgebiet Audiokommunikation}
+\documentclass[a4paper, 10pt, twocolumn]{article}
+% Sowohl LaTeX als auch pdfLaTeX können benutzt werden, um das Manuskript zu erstellen.
+
+% Bitte öffnen sie diese Datei mit utf8 Zeichenkodierung!!!
+\usepackage[utf8]{inputenc}         % Schriftkodierung dieser Datei
+\usepackage[german]{babel}          % für deutsche Dokumente
+
+\usepackage{graphicx}               % optional für Grafiken
+\usepackage{tabularx}               % optional für Tabellen
+\usepackage{multirow}               % optional für Tabellen
+\usepackage{url}                % optional für Internet Links
+
+\usepackage[small,bf]{caption2}     % bitte für Bildunterschriften verwenden
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{amsmath}                % optional für Formeln
+
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesection}{}{}
+\titleformat{\paragraph}{\normalfont\bfseries}{\theparagraph}{}{}
+\titlespacing{\section}{0pt}{6pt}{-1pt}
+\titlespacing{\subsection}{0pt}{3pt}{-1pt}
+\titlespacing{\paragraph}{0pt}{3pt}{-1pt}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}    %für Tabellen mit tabularx
+
+% Definition der Seitenränder
+\addtolength{\textwidth}{2.1cm}
+\addtolength{\topmargin}{-2.4cm}
+\addtolength{\oddsidemargin}{-1.1 cm}
+\addtolength{\textheight}{4.5cm}
+\setlength{\columnsep}{0.7cm}
+
+\pagestyle{empty}                   % weder Kopf- noch Fußzeile auf 1. Seite
 
 \begin{document}
 
-\title{Vergleich der Spotify Audio Features mit objektiven Einschätzungen von Probanden}
+\date{}                                         % kein Datum auf 1. Seite
+
+\title{\vspace{-8mm}\textbf{\large
+Vergleich des Spotify MIR Algorithmus mit subjektiven Einschätzungen }}
+
+% Hier die Namen und Daten der beteiligten Autoren eintragen
 \author{
-    \textbf{Anyere Bendrien} \\
-    \small \texttt{anyere.bendrien@posteo.de}
-    \and
-    \textbf{Sebastian Cycon} \\
-    \small \texttt{cycon@campus.tu-berlin.de}
-    \and
-    \textbf{Max Wagenbach} \\
-    \small \texttt{maxijuli@t-online.de}
-}
-%\publishers{Betreut von Prof. Dr. rer. LaTeX}
-\maketitle
+Anyere Bendrien$^{1,2}$, Sebastian Cycon$^{1,3}$, Maximilian Wagenbach$^{1,4}$\\
+$^{1}$ \emph{\small TU Berlin, Fachgebiet Audiokommunikation, 10623 Berlin,
+Deutschland
+} \\
+$^{2}$ \emph{\small anyere.bendrien@campus.tu-berlin.de
+},
+$^{3}$ \emph{\small anyere.bendrien@campus.tu-berlin.de
+},
+$^{4}$ \emph{\small anyere.bendrien@campus.tu-berlin.de
+} } \maketitle
+\thispagestyle{empty}           % weder Kopf- noch Fußzeile auf Folgeseiten
 
-\begin{abstract}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-All your base belong to us.
-\end{abstract}
+% Beginn des eigentlichen Manuskripts
+\input{einleitung}
+\input{methoden}
+\input{ergebnisse}
 
-%--------------------------------
-
-\section{Einleitung}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \cite{Urbano_2013}
-
-\section{Hauptteil}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-\section{Auswertung}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-
-%--------------------------------
-
-\bibliography{literatur}
-\bibliographystyle{ieeetr}
-%\printbibliography
-
-
+\begin{thebibliography}{5}
+\bibitem{ArticleReference}
+Schall, A.: How to write a manuscript. Acta Acustica united with
+Acustica 90 (2004), 2203-2503
+\bibitem{BookReference}
+Klang, B.: Akustik im Überblick. Schall und Rauch Verlag, Stadt,
+2010
+\bibitem{URLReference}
+DAGA 2016 Homepage, URL:\\
+\url{http://www.daga2016.de/}
+\bibitem{PDFCreator}
+PDFCreator, URL:\\
+\url{http://sourceforge.net/projects/pdfcreator}
+\bibitem{Ghostware}
+Free software Ghostview and Ghostscript, URL:\\
+\url{http://www.cs.wisc.edu/~ghost/}
+\end{thebibliography}
 \end{document}
