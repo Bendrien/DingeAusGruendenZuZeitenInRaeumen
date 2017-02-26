@@ -5,8 +5,8 @@ Das Kaiser-Meyer-Olkin-Kriterium der Faktorenanalyse nimmt einen Wert von 0,734 
 Die vier Faktoren decken insgesamt 67\% der Gesamtvarianz.
 Wenige Variablen laden dabei mit einer Faktorladung von mindestens 0,66 relativ stark in einen Faktor, während sie gleichzeitig mit einem maximalen Wert von 0,46 eher schwach in die übrigen Faktoren laden.
 Einzig die Variable \textit{Emotional} lädt in keines der Faktoren stark und entfällt aus diesem Grund aus der inhaltlichen Beschreibung der erzeugten Faktoren.
-Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} für den 1. Faktor, \textit{Niveauvoll} für den 2.
-Faktor, \textit{Heiter} für den 3. Faktor und \textit{Energisch} für den 4. Faktor.
+Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} für den 1. Faktor, \textit{Niveauvoll} für den 2. Faktor, \textit{Heiter} für den 3. Faktor und \textit{Energisch} für den 4. Faktor.   
+
 
 \begin{table}[htbp]
     \centering
@@ -34,6 +34,15 @@ Enthalten in diesem Modell ist die Variable \textit{SP\_energy}, die (mit einer 
 (Beide Variablen korrelieren negativ mit dem Faktor.) 
 Die  Regressionen mit den Faktoren \textit{Niveauvoll} und \textit{Energisch} liefern deutlich schlechtere Modellanpassungen.
 Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Faktor \textit{Energisch} und nur 0,038 bei der Regression mit dem Faktor \textit{Niveauvoll}.
+
+
+\begin{figure}[hbt]
+    \begin{center}
+        \includegraphics[width=4.2cm]{images/StreudiagrammFak3.pdf}
+    \end{center}
+    \caption{Streudiagramm der Regression des Faktors \textit{Heiter} mit Regressionsgerade.}
+    \label{fig:Faktor3}
+\end{figure}
 
 \section*{Diskussion}
 \label{sec:Diskussion}
@@ -64,9 +73,9 @@ Eine neue empirische Studie, bei der die in dem Datensatz ``10 Songs für die In
 [Jedoch wurde eine größere Abhängigkeit zwischen inhaltlich ähnlichen Variablen, wie danceability oder valence mit dem Faktor ``Fröhlich/Tanzbarkeit'', erwartet.]
 
 
-Analog zur relativ schwachen Modellgüte liefern die Effektstärken nach Cohen (1988) ebenfalls relativ kleine Werte zwischen 0,3 für die 4. Regression mit dem Faktor ``Erregend'' und 0,5 für die 3.
-Regression mit dem Faktor Fröhlich/Tanzbar.
-Nach Cohen entsprechen diese Werte einen kleinen bis mittleren Effekt.
+Analog zur relativ schwachen Modellgüte liefern die Effektstärken nach Cohen (1988) ebenfalls relativ kleine Werte zwischen 0,2 für die Regression mit dem Faktor \textit{Niveauvoll} und 0,5 für die
+Regression mit dem Faktor \textit{Heiter}.
+Nach Cohen (1988) entsprechen diese Werte einen kleinen bis mittleren Effekt.
 
 
 Methodenteil: Die vier erzeugten Faktoren ``Entspannend'', ``Anspruchsvoll'', ``Fröhlich/Tanzbar'' und ``Erregend'' werden jeweils als abhängige Variablen bei der multiplen Regression mit den Variablen des Spotify MIR Algorithmusses verglichen.

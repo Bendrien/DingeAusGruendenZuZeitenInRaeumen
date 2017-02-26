@@ -36,3 +36,6 @@ python/__pycache__/*
 
 # allow final JSON
 !/python/FinalData.json
+
+# allow pdf images
+!/latex/paper/images/*.pdf
