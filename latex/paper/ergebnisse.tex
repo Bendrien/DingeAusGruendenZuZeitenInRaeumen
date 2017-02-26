@@ -1,13 +1,27 @@
 \section*{Ergebnisse}
 \label{sec:Ergebnisse}
-Entsprechend dem Kaiser-Kriterium für signifikante Faktoren ab einem Eigenwert von mindestens 1 liefert
-die mit der Varimax-Methode rotierte Faktorenanalyse vier Faktoren.
-Das Kaiser-Meyer-Olkin-Kriterium der Faktorenanalyse nimmt einen Wert von 0,734 an, was nach Eckey/Kaiser/Rangers 2002 (S.20)[oder Backhaus et al. (2006)] einem \textit{ziemlich guten} Ausmaß an Interkorrelation zwischen den Variablen entspricht.
+Aus den 13 von Probanden bewerteten Attributen Anspruchsvoll, Einfach, Emotional, Entspannend, Erregend, Fröhlich, Intellektuell, Intensiv, Komplex, Sanft, Tanzbar, Traurig und Warm wurden, entsprechend dem Kaiser-Kriterium für signifikante Faktoren, ab einem Eigenwert von mindestens 1 der mit der Varimax-Methode rotierte Faktorenanalyse vier Faktoren geliefert.
+Das Kaiser-Meyer-Olkin-Kriterium der Faktorenanalyse nimmt einen Wert von 0,734 an, was einem \textit{ziemlich guten} Ausmaß an Interkorrelation zwischen den Variablen entspricht \cite{eckey2002multivariate} (S.20).
 Die vier Faktoren decken insgesamt 67\% der Gesamtvarianz.
 Wenige Variablen laden dabei mit einer Faktorladung von mindestens 0,66 relativ stark in einen Faktor, während sie gleichzeitig mit einem maximalen Wert von 0,46 eher schwach in die übrigen Faktoren laden.
 Einzig die Variable \textit{Emotional} lädt in keines der Faktoren stark und entfällt aus diesem Grund aus der inhaltlichen Beschreibung der erzeugten Faktoren.
-Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} für den 1. Faktor,\textit{Niveauvoll} für den 2.
-Faktor, \textit{Heiter} für den 3. Faktor und \textit{Energisch} für den 4. Faktor.   
+Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} für den 1. Faktor, \textit{Niveauvoll} für den 2.
+Faktor, \textit{Heiter} für den 3. Faktor und \textit{Energisch} für den 4. Faktor.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Faktoren}
+    \vspace{2mm}
+    \label{tab:faktoren}
+        \begin{tabularx}{8cm}{|X|X|X|X|}
+            \hline Faktor 1: Ruhig & Faktor 2: Niveauvoll & Faktor 3: Heiter & Faktor 4: Energisch \\
+            \hline Entspan\-nend & Anspruchs\-voll       & Fröhlich             & Erregend \\
+            \hline Warm              & Komplex                  & -Traurig             & Intensiv \\
+            \hline Sanft               & - Einfach                 & Tanzbar             & \\
+            \hline                        & Intellek\-tuell          &                          & \\
+            \hline
+        \end{tabularx}
+\end{table}
 
 Die Regressionen dieser Faktoren mit den Features von Spotify liefern Modelle mit hohen Signifikanzen. Abgesehen von der Regression mit dem Faktor \textit{Niveauvoll}, dass ein Modell mit einer Signifikanz von 0,017 erstellt, erhalten die Modelle mit den restlichen Regressionen Signifikanzen mit einem Wert von 0,000. 
 Das Modell mit der höchsten Güte erhalten wir bei der Regression mit dem Faktor \textit{Heiter}.
