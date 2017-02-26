@@ -1,2 +1,31 @@
 \section*{Ergebnisse}
 \label{sec:Ergebnisse}
+[Entsprechend dem Kaiser-Kriterium für signifikante Faktoren ab einem Eigenwert von mindestens 1 liefert....]
+Die mit der Varimax-Methode rotierte Faktorenanalyse liefert vier Faktoren mit jeweils einem Eigenwert größer als 1 (min 1,6)(Kaiser-Kriterium).
+Der KMO-Wert der Faktorenanalyse beträgt 0,741, was nach Eckey/Kaiser/Rangers 2002 (S.20)[oder Backhaus et al. (2006)] einem ''ziemlich guten'' Ausmaß an Interkorrelation zwischen den Variablen entspricht.
+Die vier Faktoren decken insgesamt 67 (prozent) der Gesamtvarianz. Wenige Variablen laden dabei mit einer Faktorladung von mindestens 0,67 relativ stark in einen Faktor, während sie gleichzeitig mit einem maximalen Wert von 0,40 eher schwach in die übrigen Faktoren laden. Einzig die Variable ''Emotional'' lädt in keines der Faktoren stark und entfällt aus diesem Grund aus der inhaltlichen Beschreibung der erzeugten Faktoren. Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als ''Entspannend'' für den 1. Faktor, ''Anspruchsvoll'' für den 2. Faktor, ''Fröhlich/Tanzbar'' für den 3. Faktor und ''Erregend'' für den 4. Faktor.   
+
+Die Regressionen dieser Faktoren mit den Features von Spotify liefern Modelle mit hohen Signifikanzen. Somit ist ein Zusammenhang zwischen den Bewertungen der Probanden und den Attributen von Spotify vorhanden. Die Effektstärken der Modelle sind dagegen eher gering. 
+Das Modell mit der höchsten Güte erhalten wir bei der Regression mit dem Faktor ''Fröhlich/Tanzbar''.
+Mit einem Wert von 0,186 für das Bestimmtheitsmaß wird 18,6(prozent) der Varianz vom Modell, dass die Variablen ''SP_danceability'', ''SP_energy'', ''SP_instrumentalness'' und ''SP_valence'' enthält, gedeckt. Die Variablen ''SP_danceability'' und ''SP_energy'' werden dabei etwa doppelt so stark gewichtet wie ''SP_valence'', die der schwächsten Variable in dem Modell entspricht. Das dazugehörige Streudiagramm ist in Abb. ?   
+Die Regression mit dem Faktor ''Entspannend'' liefert ein Modell mit einer Güte von 0,177. Somit wird nur 17,7 (prozent) der Varianz durch dieses Modell gedeckt. Enthalten in diesem Modell ist die Variable ''SP_energy'', die etwa drei mal stärker gewichtet ist als die zweite in dem Modell enthaltenen Variable ''SP_speechiness''. Beide Variablen korrelieren negativ mit dem Faktor. 
+Die  Regressionen mit den Faktoren ''Anspruchsvoll'' und ''Erregend'' liefern noch schlechtere Modellanpassungen. Wir erhalten ein Modell mit einer Güte von nur 0,104 bei der Regression mit dem Faktor ''Anspruchsvoll'' und 0,098 bei der Regression mit dem Faktor ''Erregend''. 
+
+Diskussion
+
+Die in der Hypothese formulierte Annahme der starken Korrelation .... mit einem Wert von ??? konnte nicht bestätigt werden. 
+Die schwachen Korrelationswerte der beiden Datensätze vermuten auf dem ersten Blick einen mangelhaften Algorithmus von Spotify zur Bewertung von Musikstücken.
+Fehler müssen jedoch nicht nur bei den Spotify Algorithmen liegen. Auch beim Datensatz ''10 Songs für die Insel'' sind Fehler zu erwarten. Die Songs wurden überwiegend von nur einer Person eingeschätzt. Hinzu kommt, dass die Probanden einen besonderen, persönlichen Bezug zu den von ihnen bewerteten Musikstücken haben. Bewertungen eines Musikstücks von mehreren Probanden mit anschließender Mittelung würde zu einer Verringerung des Fehlers und aussagekräftigeren Ergebnissen führen.
+Ein weiterer Grund für die geringe Korrelation könnte aber auch die inhaltlich meist nicht direkt entsprechenden Bewertungskriterien beider Datensätze sein. Eine neue empirische Studie, bei der Probanden direkt nach den Spotify Features befragt werden würde ebenfalls zu einem aussagekräftigerem Ergebnis führen. 
+[Jedoch wurde eine größere Abhängigkeit zwischen inhaltlich ähnlichen Variablen, wie danceability oder valence mit dem Faktor ''Fröhlich/Tanzbarkeit'', erwartet.]
+ 
+
+     
+
+
+Enthalten sind darin die Variablen ''SP_looudness'', ''SP_instrumentalness'', ''SP_danceability'', ''SP_tempo'' und ''SP_speechiness'' mit einer ähnlich großen Gewichtung.   
+
+Analog zur relativ schwachen Modellgüte liefern die Effektstärken nach Cohen (1988) ebenfalls relativ kleine Werte zwischen 0,3 für die 4. Regression mit dem Faktor ''Erregend'' und 0,5 für die 3. Regression mit dem Faktor Fröhlich/Tanzbar. Nach Cohen entsprechen diese Werte einen kleinen bis mittleren Effekt.
+
+
+Methodenteil: Die vier erzeugten Faktoren ''Entspannend'', ''Anspruchsvoll'', ''Fröhlich/Tanzbar'' und ''Erregend'' werden jeweils als abhängige Variablen bei der multiplen Regression mit den Variablen des Spotify MIR Algorithmusses verglichen. Da die Bewertungen der Umfrage subjektiven Einschätzungen(Gefühl) entsprechen, werden die der Struktur eines Musikstücks beschreibenden Attribute von Spotify ''duration_ms'' und ''time_signature'' aus der Analyse entzogen. Außerdem wird das Feature ''mode'' nicht berücksichtigt, da..... (key???).
