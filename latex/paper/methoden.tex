@@ -1,2 +1,79 @@
 \section*{Methoden}
 \label{sec:Methoden}
+
+Da es sich bei unserer Studie um eine Zweitverwertung des Datensatzes einer anderen Studie handelte mussten die Daten zunächst für unsere Zwecke neu strukturiert und angepasst werden.
+Der von uns verwendete Datensatz stammt aus einer Studie, in der die Probanden angeben sollten welche 10 Songs sie mit auf eine einsame Insel nehmen würden. [ PAPER LINK ]
+Anschließend mussten sie zu den von ihnen gewählten Songs 13 verschiedene Attribute, wie zum Beispiel Entspannend, Komplex, Tanzbar oder Traurig, bewerten.
+
+Der Datensatz enthielt 45 Datenpunkte in denen sich je ein Proband mit seinen 10 Songs und deren Bewertungen befindet.
+Ein Problem, das uns sofort ins Auge gefallen ist, war, dass der Datensatz schwer maschinenlesbar war. 
+Zum Beispiel waren die Songtitel und der Interpret beliebig vermischt und folgten keinem klaren Schema.
+Um eine Analyse der einzelnen Songs zu ermöglichen, mussten wir zunächst mit Hilfe eines Python Skripts aus dem bestehenden Datensatz die einzelnen Songs und deren Bewertungen extrahieren. 
+Anschließend wurden die Daten zu insgesamt 450 neuen Datenpunkten zusammengefasst, die jeweils einen Song und seine Bewertungen enthalten.
+Zusätzlich wurde die Daten aus dem veralteten CSV Format in das deutlich einfacher maschinell lesbare JSON Format konvertiert.
+
+Um die Spotify Audio Features für einen Song zu ermitteln muss der Spotify Programmierschnittstelle (API) die dem Song entsprechende Spotify ID übergeben werden.
+Diese muss zunächst für jeden Song ermittelt werden.
+Da die Songtitel und Interpreten maschinell nicht einfach und klar voneinander trennbar waren, haben wir die Spotify Suchfunktion verwendet.
+Dieser kann eine gemischte Zeichenkette mit Titel und Interpret übergeben werden.
+Sie liefert daraufhin Informationen über die Treffer der gefundenen Songs in der Spotify Datenbank mitsamt der Spotify IDs.
+Wir haben die ID des ersten gefunden Treffers zu dem entsprechenden Datenpunkt unseres bisherigen Datensatzes hinzugefügt.
+Insgesamt 50 der Songs konnten entweder auf Grund der vermischten Sucheingabe oder weil sie nicht in der Spotify Datenbank vorhanden sind nicht gefunden werden.
+Der Zugriff erfolgte am 23.2.2017 gegen 16:00 Uhr.
+Auch dieser Schritt wurde mit einem Python Script automatisiert durchgeführt.
+Dafür wurde die Spotipy \footnote{Spotipy Programmbibliothek: \url{https://github.com/plamere/spotipy}} Python Bibliothek verwendet, welche einen einfachen Zugriff auf die Spotify Web Schnittstellen ermöglicht.
+Nach diesem Schritt enthielt unser neuer Datensatz 400 Songs mit den Probandenbewertungen und der Spotify ID.
+
+Bei der Durchsicht des Datensatzes fiel auf, dass es sich bei einige der von Spotify gefunden Ergebnisse um völlig andere Songs handelte.
+Teilweise wurden auch Instrumental Versionen oder Cover der Songs gefunden.
+Stichproben ergaben das die Original Versionen dieser Songs sich nicht in der Spotify Datenbank befinden.
+Aus diesem Grund wurde im Anschluss eine Datenvalidierung durchgeführt.
+Dabei wurde ein einfacher Stringvergleich zwischen dem Originaltitel des "`10 Songs für die einsame Insel"' Datensatz und einer Kombination aus dem von Spotify gefunden Titel und Interpreten durchgeführt.
+Eine Ähnlichkeit der Zeichenketten von 60\% führte zu einem guten Kompromiss zwischen Genauigkeit und Freiheitsgrad.
+Dadurch wurden aus unserem Datensatz weitere 49 Einträge entfernt, was zu einer Gesamtanzahl von 351 Datenpunkten führte.
+
+Als nächsten Schritt haben wir mit Hilfe der Spotipy Bibliothek der Spotify Audio Feature Web API die ermittelten Spotify IDs übergeben.
+Dafür muss man sich zunächst bei Spotify als Developer anmelden, um eine Autorisierung zu erhalten mit der man auf die Spotify Audio Feature Web API zugreifen kann.
+Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt \footnote{\url{Dokumentation: https://developer.spotify.com/web-api/get-audio-features/}} zurück.
+Aus diesem haben wir die 13 für uns relevanten Audio Features extrahiert und in den entsprechenden Eintrag unseres Datensatzes eingefügt.
+Auch dieser Zugriff erfolgte am 23.2.2017 gegen 16:15 Uhr.
+Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte durchgeführt.
+
+Da die weitere statistische Auswertung des Datensatzes in der SPSS Software geschah mussten die Daten anschließend vom JSON in das CSV Format konvertiert werden, da dieses das einzige Format ist das SPSS akzeptiert.
+
+Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com veröffentlicht \footnote{Code Repository:\url{https://github.com/Bendrien/DingeAusGruendenZuZeitenInRaeumen/tree/master/python}}.
+
+
+
+\section*{Statistische Methoden}
+\label{sec:Statistische Methoden}
+
+Um zu Untersuchen ob und wie stark die von Probanden abgegebenen Bewertungen mit den von Spotify generierten Audio Features korrelieren, wurde eine Regression verwendet.
+Nach der beschriebenen Vorbereitung des Datensatzes wurde zunächst eine Datenreduktion durchgeführt.
+Mit Hilfe eine Faktorenanalyse soll so aus den 13 Attributen, die von den Probanden bewertet wurden, einige wenige Faktoren werden.
+Dazu wurde eine Hauptkomponentenfaktorenanalyse mit orthogonaler Achsenrotation (Varimax Verfahren) verwendet.
+
+Anschließend wurde eine multiple schrittweise Regression durchgeführt.
+Die reduzierten Faktoren wurden dabei als abhängige Variable verwendet und die Attribute des Spotify Algorithmus als unabhängige Variablen.
+
+
+
+
+
+ * Datensätze beschreiben
+ * Spotify Daten holen
+ * Daten zusammenführen
+
+Vorgehen
+------------
+ * Daten bereinigen / json konvertieren
+ * Spotify Id aus query holen (spotify such API) (Zugriffszeit nicht vergessen)
+ * gefundenen Titel mit gesuchtem vergleichen um Karaoke version rauszufiltern (Validierung)
+ * Spotify Audio Features zu validierten Daten holen (Credentials erwähnen)
+ * JSON to CSV
+ 
+
+Statistische Methoden
+----------------------------
+ * Faktorenanalyse
+ * multiple schrittweise Regression
