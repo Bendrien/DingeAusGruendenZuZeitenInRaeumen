@@ -1,7 +1,7 @@
 \section*{Methoden}
 \label{sec:Methoden}
 
-Da es sich bei unserer Studie um eine Zweitverwertung des Datensatzes einer anderen Studie handelte mussten die Daten zunächst für unsere Zwecke neu strukturiert und angepasst werden.
+Da es sich bei unserer Studie um eine Zweitverwertung des Datensatzes einer anderen Studie handelt mussten die Daten zunächst für unsere Zwecke neu strukturiert und angepasst werden.
 Der von uns verwendete Datensatz stammt aus einer Studie, in der die Probanden angeben sollten welche 10 Songs sie mit auf eine einsame Insel nehmen würden. [ PAPER LINK ]
 Anschließend mussten sie zu den von ihnen gewählten Songs 13 verschiedene Attribute, wie zum Beispiel Entspannend, Komplex, Tanzbar oder Traurig, bewerten.
 
@@ -34,7 +34,7 @@ Dadurch wurden aus unserem Datensatz weitere 49 Einträge entfernt, was zu einer
 
 Als nächsten Schritt haben wir mit Hilfe der Spotipy Bibliothek der Spotify Audio Feature Web API die ermittelten Spotify IDs übergeben.
 Dafür muss man sich zunächst bei Spotify als Developer anmelden, um eine Autorisierung zu erhalten mit der man auf die Spotify Audio Feature Web API zugreifen kann.
-Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt \footnote{\url{Dokumentation: https://developer.spotify.com/web-api/get-audio-features/}} zurück.
+Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt \footnote{Dokumentation: \url{https://developer.spotify.com/web-api/get-audio-features/}} zurück.
 Aus diesem haben wir die 13 für uns relevanten Audio Features extrahiert und in den entsprechenden Eintrag unseres Datensatzes eingefügt.
 Auch dieser Zugriff erfolgte am 23.2.2017 gegen 16:15 Uhr.
 Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte durchgeführt.
@@ -52,7 +52,7 @@ Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte durchgeführt.
 
 Da die weitere statistische Auswertung des Datensatzes in der SPSS Software geschah mussten die Daten anschließend vom JSON in das CSV Format konvertiert werden, da dieses das einzige Format ist das SPSS akzeptiert.
 
-Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com veröffentlicht \footnote{Code Repository:\url{https://github.com/Bendrien/SpotifyMIR-Evaluation/tree/master/python}}.
+Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com veröffentlicht \footnote{Code Repository:\hfill \url{https://github.com/Bendrien/SpotifyMIR-Evaluation/tree/master/python}}.
 
 
 
@@ -66,25 +66,3 @@ Dazu wurde eine Hauptkomponentenfaktorenanalyse mit orthogonaler Achsenrotation 
 
 Anschließend wurde eine multiple schrittweise Regression durchgeführt.
 Die reduzierten Faktoren wurden dabei als abhängige Variable verwendet und die Attribute des Spotify Algorithmus als unabhängige Variablen.
-
-
-
-
-
- * Datensätze beschreiben
- * Spotify Daten holen
- * Daten zusammenführen
-
-Vorgehen
-------------
- * Daten bereinigen / json konvertieren
- * Spotify Id aus query holen (spotify such API) (Zugriffszeit nicht vergessen)
- * gefundenen Titel mit gesuchtem vergleichen um Karaoke version rauszufiltern (Validierung)
- * Spotify Audio Features zu validierten Daten holen (Credentials erwähnen)
- * JSON to CSV
- 
-
-Statistische Methoden
-----------------------------
- * Faktorenanalyse
- * multiple schrittweise Regression
