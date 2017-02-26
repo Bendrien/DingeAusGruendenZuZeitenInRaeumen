@@ -11,7 +11,7 @@ def main():
 
 
     with open('FinalData.json', 'w') as dataOutFile:
-        with open('cleanedRawdataWithSpotifyID.json') as dataInFile:
+        with open('validatedData.json') as dataInFile:
             cleanedRawData = json.load(dataInFile)
             result = []
 
