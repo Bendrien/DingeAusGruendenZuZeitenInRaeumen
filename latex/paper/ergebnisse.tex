@@ -1,11 +1,11 @@
 \section*{Ergebnisse}
 \label{sec:Ergebnisse}
-Aus den 13 von Probanden bewerteten Attributen Anspruchsvoll, Einfach, Emotional, Entspannend, Erregend, Fröhlich, Intellektuell, Intensiv, Komplex, Sanft, Tanzbar, Traurig und Warm wurden, entsprechend dem Kaiser-Kriterium für signifikante Faktoren, ab einem Eigenwert von mindestens 1 der mit der Varimax-Methode rotierte Faktorenanalyse vier Faktoren geliefert.
-Das Kaiser-Meyer-Olkin-Kriterium der Faktorenanalyse nimmt einen Wert von 0,734 an, was einem \textit{ziemlich guten} Ausmaß an Interkorrelation zwischen den Variablen entspricht \cite{eckey2002multivariate} (S.20).
+Die Faktorenanalyse liefert, entsprechend dem Kaiser-Kriterium für signifikante Faktoren ab einem Eigenwert von mindestens 1, aus den 13 von Probanden bewerteten Attributen Anspruchsvoll, Einfach, Emotional, Entspannend, Erregend, Fröhlich, Intellektuell, Intensiv, Komplex, Sanft, Tanzbar, Traurig und Warm, vier Faktoren.
+Das Kaiser-Meyer-Olkin-Kriterium der Faktorenanalyse nimmt einen Wert von 0,734 an, was einem ``ziemlich guten'' Ausmaß an Interkorrelation zwischen den Variablen entspricht \cite{eckey2002multivariate} (S.20).
 Die vier Faktoren decken insgesamt 67\% der Gesamtvarianz.
 Wenige Variablen laden dabei mit einer Faktorladung von mindestens 0,66 relativ stark in einen Faktor, während sie gleichzeitig mit einem maximalen Wert von 0,46 eher schwach in die übrigen Faktoren laden.
 Einzig die Variable \textit{Emotional} lädt in keines der Faktoren stark und entfällt aus diesem Grund aus der inhaltlichen Beschreibung der erzeugten Faktoren.
-Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} für den 1. Faktor, \textit{Niveauvoll} für den 2. Faktor, \textit{Heiter} für den 3. Faktor und \textit{Energisch} für den 4. Faktor.   
+Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} für den 1. Faktor, \textit{Niveauvoll} für den 2. Faktor, \textit{Heiter} für den 3. Faktor und \textit{Energisch} für den 4. Faktor (vgl. Tabelle \ref{tab:faktoren}).   
 
 
 \begin{table}[htbp]
@@ -26,21 +26,20 @@ Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} 
 Die Regressionen dieser Faktoren mit den Features von Spotify liefern Modelle mit hohen Signifikanzen. Abgesehen von der Regression mit dem Faktor \textit{Niveauvoll}, dass ein Modell mit einer Signifikanz von 0,017 erstellt, erhalten die Modelle mit den restlichen Regressionen Signifikanzen mit einem Wert von 0,000. 
 Das Modell mit der höchsten Güte erhalten wir bei der Regression mit dem Faktor \textit{Heiter}.
 Mit einem Wert von 0,231 für das Bestimmtheitsmaß wird 23,1\% der Varianz vom Modell, dass die Variablen \textit{SP\_danceability}, \textit{SP\_energy}, \textit{SP\_instrumentalness} und \textit{SP\_valence} enthält, gedeckt.
-Die Variable \textit{SP\_energy} ist in dem Modell am stärksten gewichtet, gefolgt von den Variablen \textit{SP\_danceability} und \textit{SP\_instrumentalness}. Die Variable \textit{SP\_valence} entspricht der am schwächsten gewichteten Variable in dem Modell. (Beta Werte???)
-Das dieser Regression dazugehörige Streudiagramm ist in Abb. ?   
-Die Regression mit dem Faktor \textit{Ruhig} liefert ein Modell mit einer ähnlich hohen Güte (0,215).
+Die Variable \textit{SP\_energy} ist in dem Modell mit einem Beta Wert von 0,279 am stärksten gewichtet, gefolgt von den Variablen \textit{SP\_danceability} (0,247),  \textit{SP\_instrumentalness} (0,204) und \textit{SP\_valence} (0,136).
+Das Streudiagramm dieser Regression ist in Abb. \ref{fig:Faktor3} zu sehen.    
+Ein Modell mit einer ähnlich hohen Güte (0,215) gibt die Regression mit dem Faktor \textit{Ruhig} aus.
 21,5\% der Varianz wird durch dieses Modell gedeckt.
-Enthalten in diesem Modell ist die Variable \textit{SP\_energy}, die (mit einer starken negativen Effektstärke mit Beta -0,434) etwa vier mal stärker gewichtet ist als die zweite in dem Modell enthaltenen Variable \textit{SP\_speechiness}.
-(Beide Variablen korrelieren negativ mit dem Faktor.) 
-Die  Regressionen mit den Faktoren \textit{Niveauvoll} und \textit{Energisch} liefern deutlich schlechtere Modellanpassungen.
+Enthalten in diesem Modell ist die Variable \textit{SP\_energy}, die mit einer negativen Effektstärke mit einem Beta Wert -0,434 etwa vier mal stärker gewichtet ist als die zweite in dem Modell enthaltenen Variable \textit{SP\_speechiness} (-0,100).
+Deutlich schlechtere Modellanpassungen leifert die Regressionen mit den Faktoren \textit{Niveauvoll} und \textit{Energisch}.
 Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Faktor \textit{Energisch} und nur 0,038 bei der Regression mit dem Faktor \textit{Niveauvoll}.
 
 
 \begin{figure}[hbt]
     \begin{center}
-        \includegraphics[width=4.2cm]{images/StreudiagrammFak3.pdf}
+        \includegraphics[width=8cm]{images/StreudiagrammFak3.pdf}
     \end{center}
-    \caption{Streudiagramm der Regression des Faktors \textit{Heiter} mit Regressionsgerade.}
+    \caption{Streudiagramm und Regressionsgerade der Regression mit dem Faktor \textit{Heiter}.}
     \label{fig:Faktor3}
 \end{figure}
 
@@ -53,7 +52,7 @@ Somit ist ein Zusammenhang zwischen den Bewertungen der Probanden und den Featur
 Die Effektstärken der Modelle sind dagegen eher gering.
 Die in der Hypothese formulierte Annahme der starken Korrelation .... mit einem Wert von ??? kann somit nicht bestätigt werden.
 
-Die eher schwachen Korrelationswerte der beiden Datensätze vermuten auf dem ersten Blick einen mangelhaften Algorithmus von Spotify zur Bewertung von Musikstücken.
+Die eher schwachen Korrelationswerte der beiden Datensätze vermuten einen mangelhaften Algorithmus von Spotify zur Bewertung von Musikstücken.
 Fehler müssen jedoch nicht nur bei den Spotify Algorithmen liegen.
 Auch beim Datensatz ``10 Songs für die Insel'' sind Fehler zu erwarten.
 Die Songs wurden überwiegend von nur einer Person eingeschätzt.
@@ -64,7 +63,7 @@ Ein weiterer Grund für die geringe Korrelation könnte aber auch die inhaltlich
 Es gibt beispielsweise für den Faktor mit dem schwächsten Korrelationswert, \textit{Niveauvoll}, kein Spotify Feature, das diesem Faktor inhaltlich zuzuordnen werden könnte. 
 Wohingegen eine starke negative Korrelation des Spotify Features \textit{SP\_energy} mit dem Faktor \textit{Ruhig}, wie auch die Korrelation der Features \textit{SP\_danceability}, \textit{SP\_energy}, \textit{SP\_instrumentalness} und \textit{SP\_valence} mit dem Faktor \textit{Heiter} sich als inhaltlich sinnvoll erschließt.
 Die Spotify Features \textit{SP\_tempo}, \textit{SP\_liveness}, sowie \textit{SP\_acousticness} korrelieren nicht signifikant mit einem der Faktoren und sind in keinem Modell enthalten. 
-Das Feature \textit{SP\_tempo} beschreibt, wie die nicht berücksichtigten Features von Spotify, die Struktur eines Musikstücks und ähnelt inhaltlich somit keinem der subjektiver Empfindungen entsprechenden Bewertungen aus dem Datensatz \textit{10 Songs für die Insel}.
+Das Feature \textit{SP\_tempo} beschreibt, wie die zuvor aus der Analyse entzogenen Features von Spotify, die Struktur eines Musikstücks und ähnelt inhaltlich somit keinem der subjektiven Empfindungen entsprechenden Bewertungen aus dem Datensatz ``10 Songs für die Insel''.
 \textit{SP\_liveness} und \textit{SP\_acousticness} entsprechen inhaltlich ebenfalls keinem der ``Insel''-Variablen.  
 Eine neue empirische Studie, bei der die in dem Datensatz ``10 Songs für die Insel'' vorzufindenen Bewerungskriterien für Musikstücke durch die Spotify Features ersetzt werden, würde damit zu einem aussagekräftigerem Ergebnis führen.
 
