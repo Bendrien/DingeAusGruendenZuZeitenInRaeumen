@@ -1,30 +1,6 @@
 \section*{Ergebnisse}
 \label{sec:Ergebnisse}
 
-\begin{table}[htbp]
-    \centering
-    \caption{Das ist eine Tabelle}
-    \vspace{2mm}
-    \label{tab:DescriptiveTextForATable}
-        \begin{tabularx}{8cm}{@{\extracolsep{\fill}} @{\arrayrulewidth1.5pt\vline}Y@{\arrayrulewidth1.5pt\vline}Y|l|l|l@{\arrayrulewidth1.5pt\vline}}
-            \noalign{\hrule height1.5pt}
-            Faktor & Modell & Beta & Sig. & $\text{R}^2$ \\
-            \noalign{\hrule height1.5pt}
-            \multirow{3}{*}{Ruhig} & Konstante & 0 & & \multirow{3}{*}{0,215} \\
-                \cline{2-4}
-                & energy & -0,434 & 0 & \\
-                \cline{2-4}
-                & speechiness & -0,1 & 0 & \\
-            \noalign{\hrule height1.5pt}
-            \multirow{3}{*}{Ruhig} & Konstante & 0 & & \multirow{3}{*}{0,215} \\
-                \cline{2-4}
-                & energy & -0,434 & 0 & \\
-                \cline{2-4}
-                & speechiness & -0,1 & 0 & \\
-            \noalign{\hrule height1.5pt}
-        \end{tabularx}
-\end{table}
-
 Entsprechend dem Kaiser-Kriterium für signifikante Faktoren ab einem Eigenwert von mindestens 1 erstellt die Faktorenanalyse aus den 13 von Probanden bewerteten Attributen vier Faktoren.
 Das Kaiser-Meyer-Olkin-Kriterium der Faktorenanalyse nimmt einen Wert von 0,734 an, was einem ziemlich guten Ausmaß an Interkorrelation zwischen den Variablen entspricht \cite{eckey2002multivariate}.
 Die vier Faktoren decken insgesamt 67\% der Gesamtvarianz.
@@ -38,7 +14,7 @@ Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} 
     \caption{Faktoren}
     \vspace{2mm}
     \label{tab:faktoren}
-        \begin{tabularx}{8cm}{|X|X|X|X|}
+        \begin{tabularx}{8.4cm}{|X|X|X|X|}
             \hline Faktor 1: \textbf{Ruhig} & Faktor 2: \textbf{Niveauvoll} & Faktor 3: \textbf{Heiter} & Faktor 4: \textbf{Energisch} \\
             \hline Entspan\-nend & Anspruchs\-voll       & Fröhlich             & Erregend \\
             \hline Warm              & Komplex                  & - Traurig            & Intensiv \\
@@ -49,7 +25,7 @@ Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} 
 \end{table}
 
 
-Die Regressionen dieser Faktoren mit den Features von Spotify liefern Modelle mit sehr hohen Signifikanzen nahe 0.
+Die Regressionen dieser Faktoren mit den Features von Spotify liefern Modelle mit sehr hohen Signifikanzen nahe 0 (vgl. Tabelle 1).
 Als Kriterium für das Berücksichtigen einer Variable für ein Modell ist ein maximaler Signikanzwert von  0,05.  
 Das Modell mit der höchsten Güte erhalten wir bei der Regression mit dem Faktor \textit{Heiter}.
 23,1\% der Varianz wird vom Modell, dass die Variablen \textit{SP\_danceability}, \textit{SP\_energy}, \textit{SP\_instrumentalness} und \textit{SP\_valence} enthält, gedeckt.
@@ -60,6 +36,47 @@ Enthalten in diesem Modell ist die Variable \textit{SP\_energy}, die mit einer n
 Deutlich schlechtere Modellanpassungen liefert die Regressionen mit den Faktoren \textit{Niveauvoll} und \textit{Energisch}.
 Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Faktor \textit{Energisch} und nur 0,038 bei der Regression mit dem Faktor \textit{Niveauvoll}.
 
+\begin{table}[htbp]
+    \centering
+    \caption{Ergebnisse der Regressionen}
+    \vspace{2mm}
+    \label{tab:DescriptiveTextForATable}
+        \begin{tabularx}{8,4cm}{@{\extracolsep{\fill}} @{\arrayrulewidth1.5pt\vline}c@{\arrayrulewidth1.5pt\vline}Y|l|l|l@{\arrayrulewidth1.5pt\vline}}
+            \noalign{\hrule height1.5pt}
+            Faktor & Modell & Beta & Sig. & $\text{R}^2$ \\
+            \noalign{\hrule height1.5pt}
+            \multirow{3}{*}{Ruhig} & Konstante & & 0,000 & \multirow{3}{*}{0,215} \\
+                \cline{2-4}
+                & energy & -0,434 & 0,000 & \\
+                \cline{2-4}
+                & speechiness & -0,100 & 0,040 & \\
+            \noalign{\hrule height1.5pt}
+            \multirow{3}{*}{Niveauvoll} & Konstante & & 0,017 & \multirow{3}{*}{0,038} \\
+                \cline{2-4}
+                & instrumentalness & 0,130 & 0,020 & \\
+                \cline{2-4}
+                & loudness & -0,110 & 0,048 & \\
+                \noalign{\hrule height1.5pt}
+            \multirow{5}{*}{Heiter} & Konstante & & 0,000 & \multirow{5}{*}{0,231} \\
+                \cline{2-4}
+                & danceability & 0,247 & 0,000 & \\
+                \cline{2-4}
+                & energy & 0,279 &  0,000 & \\
+                \cline{2-4}
+                & instrumentalness & 0,204 & 0,000 & \\
+                \cline{2-4}
+                & valennce & 0,136 & 0,021 & \\
+                \noalign{\hrule height1.5pt}
+            \multirow{4}{*}{Energisch} & Konstante & & 0,000 & \multirow{4}{*}{0,112} \\
+                \cline{2-4}
+                & valence & -0,238 & 0,000 & \\
+                \cline{2-4}
+                & loudness & 0,287 & 0,000 & \\
+                \cline{2-4}
+                & instrumentalness & 0,139 & 0,010 & \\
+            \noalign{\hrule height1.5pt}
+        \end{tabularx}
+\end{table}
 
 \begin{figure}[hbt]
     \begin{center}
@@ -77,16 +94,15 @@ Die Modelle der Regressionen sind hochsignifikant.
 Somit ist ein Zusammenhang zwischen den Bewertungen der Probanden und den Features von Spotify vorhanden.
 Die Effektstärken der Modelle sind dagegen eher gering. 
 Der höchste Korrelationskoeffizient von 0,481 ist bei der Regression mit dem Faktor \textit{Heiter} vorzufinden. Die weiteren drei Regressionen liefern noch kleinere Korrelationswerte.
-Somit kann die in der Hypothese formulierte Annahme der starken Korrelation mit einem Wert mindestens 0,5 nicht bestätigt werden. 
 Die Deutung der Korrelationswerte der erstellten Modelle auf die Faktoren von dem Datensatz ``10 Songs für die Insel'' deckt sich auch mit der Interpretation von Effektstärken von Cohen.
 Dabei entspricht der Korrelationswert r für die Regression mit dem Faktor \textit{Niveauvoll} einem kleinen Effekt, die übrigen entsprechen einem mittleren Effekt. Ein starker Effekt, der bei einem Korrelationswert von mindestens 0,5 vorzufinden ist, wird nicht erreicht.
+Somit kann die in der Hypothese formulierte Annahme einer starken Korrelation der Datensätze mit einem Wert von mindestens 0,5 nicht bestätigt werden. 
 
-Die eher schwachen Korrelationswerte der beiden Datensätze vermuten einen mangelhaften Algorithmus von Spotify zur Bewertung von Musikstücken.
-Fehler müssen jedoch nicht nur bei den Spotify Algorithmen liegen.
-Auch beim Datensatz ``10 Songs für die Insel'' sind Fehler zu erwarten.
+Die Ergebnisse zeigen, dass die MIR Verfahren von Spotify zur Bewertung von Musikstücken noch Verbesserungspotential haben.
+Jedoch sind auch beim Datensatz ``10 Songs für die Insel'' Fehler zu erwarten, die in einen kleineren Korrealtionskoeffizienten resultieren könnten.
 Die Songs wurden jeweils nur einmal von nur einer Person bewertet.
 Hinzu kommt, dass die Probanden einen besonderen, persönlichen Bezug zu den von ihnen bewerteten Musikstücken haben.
-Mehrere Bewertungen eines einzelnen Musikstücks durch eine höhere Anzahl an Probanden mit anschließender Mittelung würden die in diesem Datensatz vorhandenen Fehler minimieren.
+Eine höhere Anzahl an Bewertungen eines einzelnen Musikstücks durch mehrere Probanden mit anschließender Mittelung würden die in diesem Datensatz vorhandenen Fehler minimieren.
 
 Ein weiterer Grund für die geringe Korrelation könnte aber auch die inhaltlich meist nicht direkt entsprechenden Bewertungskriterien beider Datensätze sein.
 Es gibt beispielsweise für den Faktor, mit dem schwächsten Korrelationswert, \textit{Niveauvoll} kein Spotify Feature, das diesem Faktor inhaltlich zugeordnet werden kann.
