@@ -46,15 +46,28 @@ Außerdem wird das Audio Feature ``mode'' (Tongeschlecht) nicht berücksichtigt,
 Die verwendeten Spotify Audio Features sind im folgenden kurz beschrieben:
 
 \begin{description}
-    \item[acousticness] Variable die beschreibt wie Wahrscheinlich es sich um einen Akustiksong handelt.
-    \item[danceability] Zusammengesetzte Variable die beschreibt wie Tanzbar ein Song ist. Setzt sich aus verschiedenen musikalischen Elementen wie Tempo, Rhythmusstabilität, Beatstärke oder Regelmäßigkeit.
-    \item[energy] Beschreibt die gefühlte Wahrnehmung von Intensität und Aktivität. Deathmetal hat beispielsweise eine hohe Energie, ein Bach Choral eine niedrige. Der Wert setzt sich unter anderem aus der Dynamik, der wahrgenommenen Lautstärke, der Klangfarbe, den Einsätzen und der generellen Entropie.
-    \item[instrumentalness] Vorhersage darüber ob der Song keinen Gesang enthält.
-    \item[liveness] Ermittelt die Anwesenheit eines Publikums. Je höher der Wert desto wahrscheinlicher wurde der Song Live aufgenommen.
-    \item[loudness] Gemittelter Lautstärkewert des Songs in Dezibel (dB).
-    \item[speechiness] Variable die angibt wie viel innerhalb eines Songs gesprochen wird. Hohe werte stehen für Podcasts oder Hörbücher, mittlere Werte stehen für Musik mit hohem Anteil an Sprache (wie zum Beispiel Rap) und niedrige Werte entsprechen Musik ohne Sprache.
-    \item[tempo] Anzahl der Beats per Minute (Bpm).
-    \item[valence] Maß für die musikalische Fröhlichkeit eines Songs. Songs mit einer hohen Valence werden als fröhlich und heiter empfunden. Songs mit einer niedigen Valence werden als traurig oder deprimierend wahrgenommen.
+    \item[acousticness]
+        Wie wahrscheinlich handelt es sich um einen Akustiksong.
+    \item[danceability]
+        Eignet sich ein Song zum Tanzen?
+        Wird aus verschiedenen musikalischen Elementen wie Tempo, Rhythmusstabilität, Beatstärke oder Regelmäßigkeit ermittelt.
+    \item[energy]
+        Beschreibt die gefühlte Wahrnehmung von Intensität und Aktivität.
+        Deathmetal hat beispielsweise eine hohe Energie, ein Bach Choral eine niedrige. Der Wert setzt sich unter anderem aus der Dynamik, der wahrgenommenen Lautstärke, der Klangfarbe, den Einsätzen und der generellen Entropie zusammen.
+    \item[instrumentalness]
+        Vorhersage darüber ob Gesang in einem Song enthalten ist.
+    \item[liveness]
+        Ermittelt die Anwesenheit eines Publikums beziehungsweise ob ein Song in einer Livesituation aufgenommen wurde.
+    \item[loudness]
+        Gemittelte Lautstärke des Songs in Dezibel.
+    \item[speechiness]
+        Wie viel wird innerhalb eines Songs gesprochen?
+        Unterscheidet fließend zwischen Podcasts oder Hörbücher, Musik mit hohem Anteil an Sprache (wie zum Beispiel Rap) und Musik mit geringem bis gar keinem Sprachanteil.
+    \item[tempo]
+        Anzahl der Beats per Minute (Bpm).
+    \item[valence]
+        Maß für die musikalische Fröhlichkeit bzw. Traurigkeit eines Songs.
+        Fließender Übergang von fröhlich oder heiter nach traurig oder deprimierend.
 \end{description}
 
 Da die weitere statistische Auswertung des Datensatzes in der SPSS Software geschah mussten die Daten anschließend vom JSON in das CSV Format konvertiert werden, da dieses das einzige Format ist das SPSS akzeptiert.
