@@ -6,6 +6,7 @@ Mit Hilfe statistischer Methoden wird überprüft wie stark die beiden Datensät
 Bei dieser Studie handelt es sich um eine Zweitverwertung des Datensatzes einer anderen Studie, daher mussten die Daten zunächst für diese Studie neu strukturiert und angepasst werden.
 Der verwendete Datensatz stammt aus einer Studie, in der die Probanden angeben sollten welche 10 Songs sie mit auf eine einsame Insel nehmen würden. [ PAPER LINK ]
 Anschließend mussten sie zu den von ihnen gewählten Songs folgende 13 verschiedene Attribute bewerten: Anspruchsvoll, Einfach, Emotional, Entspannend, Erregend, Fröhlich, Intellektuell, Intensiv, Komplex, Sanft, Tanzbar, Traurig und Warm.
+Dieser Datensatz stellt unsere \textit{ground truth} Daten da.
 
 Einige der Variablen, wie Fröhlich und Traurig oder Warm und Sanft, stehen augenscheinlich in Beziehung zueinander oder beschreiben eine ähnliche subjektive Empfindung.
 Daher liegt die Vermutung nahe, dass eine Datenreduktion der Attribute möglich ist.
@@ -27,16 +28,16 @@ Um eine Analyse der einzelnen Songs zu ermöglichen, mussten zunächst mit Hilfe
 Anschließend wurden die Daten zu insgesamt 450 neuen Datenpunkten zusammengefasst, die jeweils einen Song und seine Bewertungen enthalten.
 Zusätzlich wurden die Daten aus dem veralteten CSV Format in das deutlich einfacher maschinell lesbare JSON Format konvertiert.
 
-Um die Spotify Audio Features für einen Song zu ermitteln musste der Spotify Programmierschnittstelle (API) die dem Song entsprechende Spotify ID übergeben werden.
+Um die Spotify Audio Features für einen Song zu ermitteln muss der Spotify Programmierschnittstelle (API) die dem Song entsprechende Spotify ID übergeben werden.
 Diese musste zunächst für jeden Song ermittelt werden.
 Da die Songtitel und Interpreten maschinell nicht einfach und klar voneinander trennbar sind, wurde die Spotify Suchfunktion verwendet.
 Dieser kann eine gemischte Zeichenkette mit Titel und Interpret übergeben werden.
 Sie liefert daraufhin Informationen über die Treffer der gefundenen Songs in der Spotify Datenbank mitsamt der Spotify IDs.
 Die ID des ersten gefunden Treffers wurde anschließend zu dem entsprechenden Datenpunkt des bisherigen Datensatzes hinzugefügt.
-....Insgesamt 50 der Songs konnten entweder auf Grund der vermischten Sucheingabe oder wegen Fehlens in der Spotify Datenbank nicht gefunden werden.
+Insgesamt 50 der gesuchten Songs konnten entweder auf Grund der vermischten Sucheingabe oder wegen Fehlens in der Spotify Datenbank nicht gefunden werden.
 \footnote{Der Zugriff erfolgte am 23.2.2017 gegen 16:00 Uhr.}
 Auch dieser Schritt wurde mit einem Python Script automatisiert durchgeführt.
-Dafür wurde die Spotify \footnote{Spotipy Programmbibliothek: \url{https://github.com/plamere/spotipy}} Python Bibliothek verwendet, welche einen einfachen Zugriff auf die Spotify Web Schnittstellen ermöglicht.
+Dafür wurde die Spotipy \footnote{Spotipy Programmbibliothek: \url{https://github.com/plamere/spotipy}} Python Bibliothek verwendet, welche einen einfachen Zugriff auf die Spotify Web Schnittstellen ermöglicht.
 Nach diesem Schritt enthielt der neue Datensatz 400 Songs mit den Probandenbewertungen und der Spotify ID.
 
 Bei der Durchsicht des Datensatzes fiel auf, dass es sich bei einigen der von Spotify gefundenen Ergebnissen um völlig andere Songs handelte.
@@ -48,8 +49,8 @@ Eine Ähnlichkeit der Zeichenketten von 60\% führte zu einem guten Kompromiss z
 Dadurch wurden aus dem Datensatz weitere 49 Einträge entfernt, was zu einer Gesamtanzahl von 351 Datenpunkten führte.
 
 Als nächsten Schritt wurde mit Hilfe der Spotipy Bibliothek der Spotify Audio Feature Web API die ermittelten Spotify IDs übergeben.
-Dafür musste man sich zunächst bei Spotify als Developer anmelden, um eine Autorisierung zu erhalten, mit der man auf die Spotify Audio Feature Web API zugreifen kann.
-Für jede angefragte ID lieferte die Spotify Audio Feature Web API ein JSON Objekt\,\footnote{Dokumentation: \url{https://developer.spotify.com/web-api/get-audio-features/}} zurück.
+Dafür muss man sich zunächst bei Spotify als Developer anmelden, um eine Autorisierung zu erhalten, mit der man auf die Spotify Audio Feature Web API zugreifen kann.
+Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt\,\footnote{Dokumentation: \url{https://developer.spotify.com/web-api/get-audio-features/}} zurück.
 Aus diesem wurden die für diese Studie relevanten Audio Features extrahiert und in den entsprechenden Eintrag des Datensatzes eingefügt.
 \footnote{Der Zugriff erfolgte am 23.2.2017 gegen 16:15 Uhr.}
 Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte durchgeführt.
@@ -57,7 +58,7 @@ Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte durchgeführt.
 Von den insgesamt 13 von Spotify zur Verfügung gestellten Audio Feature Attributen wurden für die Analyse nur 9 verwendet.
 Da die Bewertungen der Umfrage der verwendeten Studie subjektiven Einschätzungen entsprechen, wurden Attribute, welche die Struktur eines Musikstücks beschreiben, nicht in die statistische Analyse mit einbezogen.
 Zu diesen Attributen gehören Länge des Songs ("`duration\_ms"'), Taktangabe ("`time\_signature"') sowie  Tonklasse ("`key"').
-Außerdem wurde das Audio Feature "`mode"' (Tongeschlecht) nicht berücksichtigt. Es handelt sich dabei um eine dichotome Variable, welche für das verwendete statistische Verfahren ungeeignet ist.
+Außerdem wurde das Audio Feature "`mode"' (Tongeschlecht) nicht berücksichtigt. Es handelt sich dabei um eine dichotome Variable, welche für die Regression ungeeignet ist.
 Die verwendeten Spotify Audio Features sind im folgenden kurz beschrieben:
 
 \begin{description}
