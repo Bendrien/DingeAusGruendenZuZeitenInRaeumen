@@ -1,6 +1,30 @@
 \section*{Ergebnisse}
 \label{sec:Ergebnisse}
 
+\begin{table}[htbp]
+    \centering
+    \caption{Das ist eine Tabelle}
+    \vspace{2mm}
+    \label{tab:DescriptiveTextForATable}
+        \begin{tabularx}{8cm}{@{\extracolsep{\fill}} @{\arrayrulewidth1.5pt\vline}Y@{\arrayrulewidth1.5pt\vline}Y|l|l|l@{\arrayrulewidth1.5pt\vline}}
+            \noalign{\hrule height1.5pt}
+            Faktor & Modell & Beta & Sig. & $\text{R}^2$ \\
+            \noalign{\hrule height1.5pt}
+            \multirow{3}{*}{Ruhig} & Konstante & 0 & & \multirow{3}{*}{0,215} \\
+                \cline{2-4}
+                & energy & -0,434 & 0 & \\
+                \cline{2-4}
+                & speechiness & -0,1 & 0 & \\
+            \noalign{\hrule height1.5pt}
+            \multirow{3}{*}{Ruhig} & Konstante & 0 & & \multirow{3}{*}{0,215} \\
+                \cline{2-4}
+                & energy & -0,434 & 0 & \\
+                \cline{2-4}
+                & speechiness & -0,1 & 0 & \\
+            \noalign{\hrule height1.5pt}
+        \end{tabularx}
+\end{table}
+
 Entsprechend dem Kaiser-Kriterium für signifikante Faktoren ab einem Eigenwert von mindestens 1 erstellt die Faktorenanalyse aus den 13 von Probanden bewerteten Attributen vier Faktoren.
 Das Kaiser-Meyer-Olkin-Kriterium der Faktorenanalyse nimmt einen Wert von 0,734 an, was einem ziemlich guten Ausmaß an Interkorrelation zwischen den Variablen entspricht \cite{eckey2002multivariate}.
 Die vier Faktoren decken insgesamt 67\% der Gesamtvarianz.
