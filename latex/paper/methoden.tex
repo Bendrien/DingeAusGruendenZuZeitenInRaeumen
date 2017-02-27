@@ -1,7 +1,9 @@
 \section*{Methoden}
 \label{sec:Methoden}
 
-Um die Hypothese zu überprüfen, ob und wie stark die Ergebnisse der Spotify MIR Algorithmen mit den subjektiven Bewertungen durch Probanden korrelieren, wird ein Datensatz von Probanden bewerteter Musikstücke mit den von Spotify erzeugen Audio Features der selben Musikstücke verglichen.
+Um die Hypothese zu überprüfen,
+% ob und wie stark die Ergebnisse der Spotify MIR Algorithmen mit den subjektiven Bewertungen durch Probanden korrelieren, 
+wird ein Datensatz von Probanden bewerteter Musikstücke mit den von Spotify erzeugten Audio Features der selben Musikstücke verglichen.
 Mit Hilfe statistischer Methoden wird überprüft wie stark die beiden Datensätze korrelieren.
 Bei dieser Studie handelt es sich um eine Zweitverwertung des Datensatzes einer anderen Studie, daher mussten die Daten zunächst für diese Studie neu strukturiert und angepasst werden.
 Der verwendete Datensatz stammt aus einer Studie, in der die Probanden angeben sollten welche 10 Songs sie mit auf eine einsame Insel nehmen würden. [ PAPER LINK ]
@@ -10,7 +12,7 @@ Dieser Datensatz stellt unsere \textit{ground truth} Daten da.
 
 Einige der Variablen, wie Fröhlich und Traurig oder Warm und Sanft, stehen augenscheinlich in Beziehung zueinander oder beschreiben eine ähnliche subjektive Empfindung.
 Daher liegt die Vermutung nahe, dass eine Datenreduktion der Attribute möglich ist.
-Mit Hilfe einer Faktorenanalyse soll so aus den 13 Attributen, die von den Probanden bewertet wurden, einige wenige Faktoren erstellt werden.
+Mit Hilfe einer Faktorenanalyse soll so aus den 13 Attributen, die von den Probanden bewertet wurden, einige wenige Faktoren zur weiteren Betrachtung erstellt werden.
 Dazu wird eine Hauptkomponentenfaktorenanalyse mit anschließender orthogonaler Achsenrotation (Varimax Verfahren) verwendet.
 Um die Korrelation zwischen den Spotify Audio Features und den Faktoren des "`Insel"' Datensatzes zu untersuchen wird anschließend eine schrittweise multiple Regression durchgeführt.
 Die Faktoren werden dabei als abhängige Variable verwendet und die Attribute des Spotify Algorithmus als unabhängige Variablen.
