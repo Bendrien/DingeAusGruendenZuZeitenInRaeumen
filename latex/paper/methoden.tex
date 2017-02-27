@@ -34,19 +34,26 @@ Dadurch wurden aus dem Datensatz weitere 49 Einträge entfernt, was zu einer Ges
 
 Als nächsten Schritt wurde mit Hilfe der Spotipy Bibliothek der Spotify Audio Feature Web API die ermittelten Spotify IDs übergeben.
 Dafür muss man sich zunächst bei Spotify als Developer anmelden, um eine Autorisierung zu erhalten mit der man auf die Spotify Audio Feature Web API zugreifen kann.
-Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt \footnote{Dokumentation: \url{https://developer.spotify.com/web-api/get-audio-features/}} zurück.
-Aus diesem haben wir die 13 für uns relevanten Audio Features extrahiert und in den entsprechenden Eintrag unseres Datensatzes eingefügt.
+Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt\,\footnote{Dokumentation: \url{https://developer.spotify.com/web-api/get-audio-features/}} zurück.
+Aus diesem haben wir die für diese Studie relevanten Audio Features extrahiert und in den entsprechenden Eintrag unseres Datensatzes eingefügt.
 \footnote{Der Zugriff erfolgte am 23.2.2017 gegen 16:15 Uhr.}
 Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte durchgeführt.
+
+Von den insgesamt 13 von Spotify zur Verfügung gestellten Audio Feature Attributen nur 8 verwendet.
+Da die Bewertungen der Umfrage subjektiven Einschätzungen entsprechen, wurden die Attribute, welche die Struktur eines Musikstücks beschreiben, nicht in die statistische Analyse mit einbezogen.
+Zu diesen Attributen gehören die Länge des Songs (``duration\_ms''),  die Taktangabe (``time\_signature'') sowie die Tonklasse (``key'').
+Außerdem wird das Audio Feature ``mode'' (Tongeschlecht) nicht berücksichtigt, da es sich um eine dichotome Variable handelt, welches sich für das verwendete statistische Verfahren nicht eignet.
+Die verwendeten Spotify Audio Features sind im folgenden kurz beschrieben:
 
 \begin{description}
     \item[acousticness] Variable die beschreibt wie Wahrscheinlich es sich um einen Akustiksong handelt.
     \item[danceability] Zusammengesetzte Variable die beschreibt wie Tanzbar ein Song ist. Setzt sich aus verschiedenen musikalischen Elementen wie Tempo, Rhythmusstabilität, Beatstärke oder Regelmäßigkeit.
-    \item[energy] Beschreibt die gefühlte Wahrnehmung von Intensität und Aktivität. Deathmetal hat beispielsweise eine hohe Energie eine Bach Choral eine niedrige. Der Wert setzt sich unter anderem aus der Dynamik, der wahrgenommenen Lautstärke, der Klangfarbe, den Einsätzen und der generellen Entropie.
+    \item[energy] Beschreibt die gefühlte Wahrnehmung von Intensität und Aktivität. Deathmetal hat beispielsweise eine hohe Energie, ein Bach Choral eine niedrige. Der Wert setzt sich unter anderem aus der Dynamik, der wahrgenommenen Lautstärke, der Klangfarbe, den Einsätzen und der generellen Entropie.
     \item[instrumentalness] Vorhersage darüber ob der Song keinen Gesang enthält.
     \item[liveness] Ermittelt die Anwesenheit eines Publikums. Je höher der Wert desto wahrscheinlicher wurde der Song Live aufgenommen.
     \item[loudness] Gemittelter Lautstärkewert des Songs in Dezibel (dB).
-    \item[speechiness] Variable die angibt wie viel innerhalb eines Songs gesprochen wird. Hohe werte stehen für Podcasts oder Hörbücher, mittlere Werte stehen für Musik mit hohem Anteil an Sprache (wie zum Beispiel Rap) und niedrige Werte entsprechen Musik ohne Sprache. 
+    \item[speechiness] Variable die angibt wie viel innerhalb eines Songs gesprochen wird. Hohe werte stehen für Podcasts oder Hörbücher, mittlere Werte stehen für Musik mit hohem Anteil an Sprache (wie zum Beispiel Rap) und niedrige Werte entsprechen Musik ohne Sprache.
+    \item[tempo] Anzahl der Beats per Minute (Bpm).
     \item[valence] Maß für die musikalische Fröhlichkeit eines Songs. Songs mit einer hohen Valence werden als fröhlich und heiter empfunden. Songs mit einer niedigen Valence werden als traurig oder deprimierend wahrgenommen.
 \end{description}
 
