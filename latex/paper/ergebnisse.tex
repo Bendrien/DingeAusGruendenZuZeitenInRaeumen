@@ -5,37 +5,37 @@ Das Kaiser-Meyer-Olkin-Kriterium der Faktorenanalyse nimmt für die betrachteten
 Das entspricht einem ziemlich guten Maß an Interkorrelation zwischen den Variablen \cite{eckey2002multivariate}, womit sie sich für eine Faktorenanalyse eignen.
 Entsprechend dem Kaiser-Kriterium für signifikante Faktoren ab einem Eigenwert von mindestens 1, erstellt die Faktorenanalyse aus den 13 Variablen vier Faktoren.
 Die vier Faktoren decken insgesamt 67\% der Gesamtvarianz.
-Wenige Variablen laden dabei mit einer Faktorladung von mindestens 0,66 relativ stark in einen Faktor, während sie gleichzeitig mit einem maximalen Wert von 0,46 eher schwach in die übrigen Faktoren laden.
+Wenige Variablen laden dabei relativ stark in einen Faktor, während sie gleichzeitig eher schwach in die übrigen Faktoren laden.
 Einzig die Variable \textit{Emotional} lädt in keinen der Faktoren stark und wird aus diesem Grund für die inhaltliche Beschreibung der erzeugten Faktoren nicht berücksichtigt.
 Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} für den 1. Faktor, \textit{Niveauvoll} für den 2. Faktor, \textit{Heiter} für den 3. Faktor und \textit{Energisch} für den 4. Faktor (vgl. Tabelle \ref{tab:faktoren}).   
 
 
 \begin{table}[htbp]
     \centering
-    \caption{Ergebnis der Faktorenanlyse}
+    \caption{Ergebnis der Faktorenanlyse. Die Werte in Klammern entsprechen den Faktorladungen.}
     \vspace{2mm}
     \label{tab:faktoren}
         \begin{tabularx}{8.4cm}{@{\extracolsep{\fill}} @{\arrayrulewidth1.5pt\vline}Y@{\arrayrulewidth1.5pt\vline}Y@{\arrayrulewidth1.5pt\vline}}
             \noalign{\hrule height1.5pt}
             1. Faktor: \textbf{Ruhig} & 2. Faktor: \textbf{Niveauvoll} \\
             \hline
-            Entspannend        & Anspruchsvoll \\
-            Warm               & Komplex \\
-            Sanft              & - Einfach \\           
-                               & Intellektuell \\
+            Entspannend  (0,821)       & Anspruchsvoll  (0,862)\\
+            Warm  (0,811)               & Komplex  (0,736) \\
+            Sanft  (0,777)             &  Einfach  (-0,701) \\           
+                               & Intellektuell  (0,669)\\
             \noalign{\hrule height1.5pt}
             3. Faktor: \textbf{Heiter} & 4. Faktor: \textbf{Energisch} \\
             \hline
-            Fröhlich             & Erregend \\
-            - Traurig            & Intensiv \\
-            Tanzbar              & \\
+            Fröhlich (0,855)             & Erregend (0,838)\\
+            Traurig (-0,713)           & Intensiv (0,656)\\
+            Tanzbar (0,680)             & \\
             \noalign{\hrule height1.5pt}
         \end{tabularx}
 \end{table}
 
 
 Die Regressionen der ermittelten Faktoren mit den Features von Spotify liefern Modelle mit sehr hohen Signifikanzen nahe 0 (vgl. Tabelle \ref{tab:regression}).
-Als Kriterium für das Aufnehmen einer Variable für ein Modell ist ein maximaler Signikanzwert von  0,05.  
+Als Kriterium für das Aufnehmen einer Variable in ein Modell muss ein maximaler Signikanzwert von 0,05 erreicht werden.  
 Das Modell mit der höchsten Güte erhalten wir bei der Regression mit dem Faktor \textit{Heiter}.
 23,1\% der Varianz wird vom Modell, dass die Variablen \textit{danceability}, \textit{energy}, \textit{instrumentalness} und \textit{valence} enthält, gedeckt.
 Die Variable \textit{energy} ist in dem Modell am stärksten gewichtet, gefolgt von den Variablen \textit{danceability},  \textit{instrumentalness} und \textit{valence}.
@@ -94,20 +94,20 @@ Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Fak
 Die Modelle der Regressionen sind hochsignifikant.
 Somit ist ein Zusammenhang zwischen den Bewertungen der Probanden und den Features von Spotify vorhanden.
 Die Effektstärken der Modelle sind dagegen eher gering. 
-Der höchste Korrelationskoeffizient von 0,481 ist bei der Regression mit dem Faktor \textit{Heiter} vorzufinden. Die weiteren drei Regressionen liefern noch kleinere Korrelationswerte.
-Die Deutung der Korrelationswerte der erstellten Modelle auf die Faktoren von dem Datensatz "`10 Songs für die einsame Insel"' deckt sich mit der Interpretation von Effektstärken von Cohen.
-Dabei entspricht der Korrelationswert $r$ für die Regression mit dem Faktor \textit{Niveauvoll} einem kleinen Effekt, die übrigen entsprechen einem mittleren Effekt. 
-Ein starker Effekt, der bei einem Korrelationswert von mindestens 0,5 vorzufinden ist, wird nicht erreicht \cite{cohen1988}.
-Somit kann die in der Hypothese formulierte Annahme einer Korrelation der Datensätze mit einem Wert von mindestens 0,5 nicht bestätigt werden. 
+Während die Regressionen mit den Faktoren \textit{Heiter} und \textit{Ruhig} mit Korrelationskoeffizienten von 0,481 und 0,464 nah an den in der Hypothese formulierten Wert kommen, liegen die Korrelationskoeffizienten für die Regressionen mit den Faktoren  \textit{Energisch} (0,335) und vor allem \textit{Niveauvoll} (0,195) deutlich darunter.
+Die Deutung der Korrelationswerte der erstellten Modelle deckt sich auch mit der Interpretation von Effektstärken von Cohen \cite{cohen1988}.
+Dabei entspricht der Korrelationswert r für die Regression mit dem Faktor \textit{Niveauvoll} einem kleinen Effekt, die übrigen entsprechen immerhin einem mittleren Effekt.
+Ein starker Effekt, der bei einem Korrelationswert von mindestens 0,5 vorzufinden ist, wird nicht erreicht.
+Somit kann die in der Hypothese formulierte Annahme einer starken Korrelation der Datensätze mit einem Wert von mindestens 0,5 nicht bestätigt werden. 
 
 Die Ergebnisse zeigen, dass die MIR Verfahren von Spotify zur Bewertung von Musikstücken noch Verbesserungspotential haben.
 Jedoch sind auch beim Datensatz "`10 Songs für die einsame Insel"' Fehler zu erwarten, die in einen kleineren Korrelationskoeffizienten resultieren könnten.
-Die Songs wurden jeweils nur einmal von einer Person bewertet.
+Die Songs wurden jeweils nur einmal von einer einzelnen Person bewertet.
 Hinzu kommt, dass die Probanden einen besonderen, persönlichen Bezug zu den von ihnen bewerteten Musikstücken haben.
 Eine höhere Anzahl an Bewertungen eines einzelnen Musikstücks durch mehrere Probanden mit anschließender Mittelung würden die in diesem Datensatz vorhandenen Fehler minimieren.
 
 Ein weiterer Grund für die geringe Korrelation könnte die inhaltlich meist nicht direkt entsprechenden Bewertungskriterien beider Datensätze sein.
-Es gibt beispielsweise für den Faktor, mit dem schwächsten Korrelationswert, \textit{Niveauvoll} kein Spotify Feature, das diesem Faktor inhaltlich zugeordnet werden kann.
+Es gibt beispielsweise für den Faktor mit dem schwächsten Korrelationswert, \textit{Niveauvoll} kein Spotify Feature, das diesem Faktor inhaltlich zugeordnet werden kann.
 Dahingegen lässt sich eine starke negative Korrelation des Spotify Features \textit{energy} mit dem Faktor \textit{Ruhig} inhaltlich sinnvoll erschließen.
 Gleiches gilt auch für die Korrelation der Features \textit{danceability}, \textit{energy}, \textit{instrumentalness} und \textit{valence} mit dem Faktor \textit{Heiter}.
 Jedoch wurde eine größere Abhängigkeit dieser inhaltlich ähnlichen Variablen, vor allem \textit{danceability} und \textit{valence} mit dem Faktor \textit{Heiter} erwartet.
@@ -116,7 +116,7 @@ Das Audio Feature \textit{tempo} beschreibt eher die Struktur eines Musikstücks
 Ähnlich wie die schon im Vorhinein von der Analyse nicht berücksichtigten Audio Features von Spotify, ähnelt daher das Feature \textit{tempo} inhaltlich keinem der subjektiver Empfindungen entsprechenden Bewertungen aus dem Inseldatensatz.
 Die Audio Features \textit{liveness} und \textit{acousticness} entsprechen inhaltlich ebenfalls keinem der "`Insel"'-Variablen.  
 
-Mit einer neuen empirische Studie, bei der die in dem Datensatz "`10 Songs für die einsame Insel"' vorzufindenden Bewertungskriterien für Musikstücke konkret durch die Audio Features von Spotify ersetzt werden, kann an die in diesem Paper beschriebenen Forschungsergebnisse angeknüpft werden.
+Mit einer neuen empirischen Studie, bei der die in dem Datensatz "`10 Songs für die einsame Insel"' vorzufindenden Bewertungskriterien für Musikstücke konkret durch die Audio Features von Spotify ersetzt werden, kann an die in diesem Paper beschriebenen Forschungsergebnisse angeknüpft werden.
 
 
 
