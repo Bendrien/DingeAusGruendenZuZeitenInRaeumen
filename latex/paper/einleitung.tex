@@ -16,23 +16,19 @@ Er stellt seinen Nutzern eine umfangreiche Sammlung von Musik zum Hören über d
 \textit{Spotify} extrahiert aus der Musik \textit{Audio Features} und macht diese über eine Schnittstelle öffentlich abrufbar.
 Aufbauend darauf ist eine Vielzahl an informationstechnischer Weiterverarbeitungen möglich, für welche jedoch der Wahrheitsgehalt der abgerufenen Informationen einen großen Stellenwert hat.
 Dieses Problem führt zu der schwer greifbaren und hochaktuellen Problematik im Feld des \textit{MIR}:
-Wie lassen sich die Ergebnisse unterschiedlicher \textit{MIR} Verfahren und Algorithmen bewerten und mit einander vergleichen? \cite{Urbano_2013}
+Wie lassen sich die Ergebnisse unterschiedlicher \textit{MIR} Verfahren und Algorithmen bewerten und mit einander vergleichen? \cite{Downie2004}
 
 In der Praxis kommen verschiedene Evaluationsverfahren zum Einsatz.
-Ein Verfahren mit Blick auf \textit{Gültigkeit}, \textit{Zuverlässigkeit} und \textit{Effizienz} \cite{Downie2004}, wird im Folgenden genauer beschrieben.
+Ein Verfahren mit Blick auf \textit{Gültigkeit}, \textit{Zuverlässigkeit} und \textit{Effizienz} \cite{Urbano_2013}, wird im Folgenden genauer beschrieben.
 Die durch \textit{MIR} extrahierten \textit{Audio Features} werden einer Aggregation von Vergleichsinformationen gegenübergestellt und mit ihr abgeglichen (\textit{Gültigkeit}), um eine Aussage über ihren Wahrheitsgehalt treffen zu können.
 Damit die aggregierten Daten als Vergleichsmaß herangezogen werden können, muss zuvor sichergestellt werden, dass sie sowohl inhaltlich als auch quantitativ einem Mindestmaß an Qualität entsprechen (\textit{Zuverlässigkeit}).
-Ein solcher Datensatz wird auch als \textit{ground truth} bezeichnet. 
+Um die Validität dieser Vergleichsdaten sicher zu stellen werden diese häufig von Menschen bewertet.
+Ein solcher Datensatz wird auch als \textit{ground truth} bezeichnet.
+Unter \textit{Effizienz} versteht man die Wiederverwertbarkeit der ground truth Daten für verschiedene Studien und Forschergruppen.
+Um nun die Qualität der Ergebnisse eines Algorithmus zu bewerten, werden diese mit den ground truth Daten verglichen.
+Über den Grad der Korrelation zwischen den beiden Datensätze lassen sich Aussagen über die Ergebnisse von MIR Algorithmen treffen.
 
-In dieser Studie werden die Audio Features von Spotify nach Gültigkeit geprüft.
-Als gegenübergestellte Vergleichsinformation dienen subjektive Bewertungen von Musikstücken. Entnommen werden diese Daten aus der Studie "10 Insel..."
-%Zum Vergleich werden resultierendaus der Studie "10en Informationen  Insel...." gegenübergestellt 
-Aus dem Vergleich soll der Grad der Korrelation zwischen den Audio Features und den Vergleichsdaten hervorgehen und damit der Wahrheitsgehalt der Spotify Features beurteilt werden.
-       
-
-
-TO DO:
-Ein bis zwei Beispiele aus bisherigen Studien 
-Unsere Herangehensweise mit Folgerung zur Nullhypothese:
-\textbf{Die von \textit{Spotify} bereitgestellten \textit{Audio Features} korrelieren mit einem Wert von ,5 oder mehr mit subjektiven Bewertungen von Menschen.}
-alternative: \textbf{Die von \textit{Spotify} bereitgestellten \textit{Audio Features} korrelieren mit einem Korrelationskoeffizienten von 0,5 oder mehr mit den subjektiven Bewertungen von Menschen.}
+In dieser Studie werden die Audio Features von Spotify nach diesem Prinzip auf ihre Qualität geprüft.
+Dazu werden sie ebenfalls mit einem von Menschen bewerteten Datensatz verglichen.
+Dies führt uns zu folgender Hypothese:
+Die von \textit{Spotify} bereitgestellten \textit{Audio Features} korrelieren mit einem Korrelationskoeffizienten von 0,5 oder mehr mit den subjektiven Bewertungen von Menschen.
