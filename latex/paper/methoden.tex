@@ -1,11 +1,26 @@
 \section*{Methoden}
 \label{sec:Methoden}
 
-Da es sich bei dieser Studie um eine Zweitverwertung des Datensatzes einer anderen Studie handelt mussten die Daten zunächst für diese Studie neu strukturiert und angepasst werden.
+Um die Hypothese zu überprüfen, ob und wie stark die Ergebnisse der Spotify MIR Algorithmen mit den subjektiven Bewertungen durch Probanden korrelieren, wird ein Datensatz von Probanden bewerteter Musikstücke mit den von Spotify erzeugen Audio Features der selben Musikstücke verglichen.
+Mit Hilfe statistischer Methoden wird überprüft wie stark die beiden Datensätze korrelieren.
+Bei dieser Studie handelt es sich um eine Zweitverwertung des Datensatzes einer anderen Studie, daher mussten die Daten zunächst für diese Studie neu strukturiert und angepasst werden.
 Der verwendete Datensatz stammt aus einer Studie, in der die Probanden angeben sollten welche 10 Songs sie mit auf eine einsame Insel nehmen würden. [ PAPER LINK ]
 Anschließend mussten sie zu den von ihnen gewählten Songs folgenden 13 verschiedene Attribute bewerten: Anspruchsvoll, Einfach, Emotional, Entspannend, Erregend, Fröhlich, Intellektuell, Intensiv, Komplex, Sanft, Tanzbar, Traurig und Warm.
 
-Der Datensatz enthielt 45 Datenpunkte in denen sich je ein Proband mit seinen 10 Songs und deren Bewertungen befindet.
+Einige der Variablen, wie Fröhlich und Traurig oder Warm und Sanft, stehen augenscheinlich in Beziehung zueinander oder beschreiben eine ähnliche subjektive Empfindung.
+Daher liegt die Vermutung nahe, dass eine Datenreduktion der Attribute möglich ist.
+Mit Hilfe einer Faktorenanalyse soll so aus den 13 Attributen, die von den Probanden bewertet wurden, einige wenige Faktoren werden.
+Dazu wurde eine Hauptkomponentenfaktorenanalyse mit orthogonaler Achsenrotation (Varimax Verfahren) verwendet.
+Um die Korrelation zwischen den Spotify Audio Features und den reduzierten Faktoren zu untersuchen wurde anschließend eine multiple schrittweise Regression durchgeführt.
+Die reduzierten Faktoren wurden dabei als abhängige Variable verwendet und die Attribute des Spotify Algorithmus als unabhängige Variablen.
+
+
+
+\section*{Datenaufbereitung}
+\label{sec:Datenaufbereitung}
+
+
+Der "`Insel"' Datensatz enthielt 45 Datenpunkte in denen sich je ein Proband mit seinen 10 Songs und deren Bewertungen befindet.
 Ein Problem, das sofort ins Auge fällt, ist, dass der Datensatz schwer maschinenlesbar ist. 
 Zum Beispiel sind die Songtitel und der Interpret beliebig vermischt und folgten keinem klaren Schema.
 Um eine Analyse der einzelnen Songs zu ermöglichen, mussten zunächst mit Hilfe eines Python Skripts aus dem bestehenden Datensatz die einzelnen Songs und deren Bewertungen extrahieren werden.
@@ -74,15 +89,3 @@ Da die weitere statistische Auswertung des Datensatzes in der SPSS Software gesc
 
 Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com veröffentlicht \footnote{Code Repository:\hfill \url{https://github.com/Bendrien/SpotifyMIR-Evaluation/tree/master/python}}.
 
-
-
-\section*{Statistische Methoden}
-\label{sec:Statistische Methoden}
-
-Um zu Untersuchen ob und wie stark die von Probanden abgegebenen Bewertungen mit den von Spotify generierten Audio Features korrelieren, wurde eine Regression verwendet.
-Nach der beschriebenen Vorbereitung des Datensatzes wurde zunächst eine Datenreduktion durchgeführt.
-Mit Hilfe eine Faktorenanalyse soll so aus den 13 Attributen, die von den Probanden bewertet wurden, einige wenige Faktoren werden.
-Dazu wurde eine Hauptkomponentenfaktorenanalyse mit orthogonaler Achsenrotation (Varimax Verfahren) verwendet.
-
-Anschließend wurde eine multiple schrittweise Regression durchgeführt.
-Die reduzierten Faktoren wurden dabei als abhängige Variable verwendet und die Attribute des Spotify Algorithmus als unabhängige Variablen.
