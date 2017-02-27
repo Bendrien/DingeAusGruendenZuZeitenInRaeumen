@@ -26,7 +26,7 @@ Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} 
 
 
 Die Regressionen dieser Faktoren mit den Features von Spotify liefern Modelle mit sehr hohen Signifikanzen nahe 0 (vgl. Tabelle 1).
-Als Kriterium für das Berücksichtigen einer Variable für ein Modell ist ein maximaler Signikanzwert von  0,05.  
+Als Kriterium für das Aufnehmen einer Variable für ein Modell ist ein maximaler Signikanzwert von  0,05.  
 Das Modell mit der höchsten Güte erhalten wir bei der Regression mit dem Faktor \textit{Heiter}.
 23,1\% der Varianz wird vom Modell, dass die Variablen \textit{SP\_danceability}, \textit{SP\_energy}, \textit{SP\_instrumentalness} und \textit{SP\_valence} enthält, gedeckt.
 Die Variable \textit{SP\_energy} ist in dem Modell am stärksten gewichtet, gefolgt von den Variablen \textit{SP\_danceability},  \textit{SP\_instrumentalness} und \textit{SP\_valence}.
@@ -45,21 +45,15 @@ Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Fak
             \noalign{\hrule height1.5pt}
             Faktor & Modell & Beta & Sig. & $\text{R}^2$ \\
             \noalign{\hrule height1.5pt}
-            \multirow{3}{*}{Ruhig} & Konstante & & 0,000 & \multirow{3}{*}{0,215} \\
-                \cline{2-4}
-                & energy & -0,434 & 0,000 & \\
+            \multirow{2}{*}{Ruhig}  & energy & -0,434 & 0,000 & \multirow{2}{*}{0,215} \\
                 \cline{2-4}
                 & speechiness & -0,100 & 0,040 & \\
             \noalign{\hrule height1.5pt}
-            \multirow{3}{*}{Niveauvoll} & Konstante & & 0,017 & \multirow{3}{*}{0,038} \\
-                \cline{2-4}
-                & instrumentalness & 0,130 & 0,020 & \\
+            \multirow{2}{*}{Niveauvoll} & instrumentalness & 0,130 & 0,020 & \multirow{2}{*}{0,038} \\
                 \cline{2-4}
                 & loudness & -0,110 & 0,048 & \\
                 \noalign{\hrule height1.5pt}
-            \multirow{5}{*}{Heiter} & Konstante & & 0,000 & \multirow{5}{*}{0,231} \\
-                \cline{2-4}
-                & danceability & 0,247 & 0,000 & \\
+            \multirow{4}{*}{Heiter} & danceability & 0,247 & 0,000 & \multirow{4}{*}{0,231} \\
                 \cline{2-4}
                 & energy & 0,279 &  0,000 & \\
                 \cline{2-4}
@@ -67,9 +61,7 @@ Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Fak
                 \cline{2-4}
                 & valennce & 0,136 & 0,021 & \\
                 \noalign{\hrule height1.5pt}
-            \multirow{4}{*}{Energisch} & Konstante & & 0,000 & \multirow{4}{*}{0,112} \\
-                \cline{2-4}
-                & valence & -0,238 & 0,000 & \\
+            \multirow{3}{*}{Energisch} & valence & -0,238 & 0,000 & \multirow{3}{*}{0,112} \\
                 \cline{2-4}
                 & loudness & 0,287 & 0,000 & \\
                 \cline{2-4}
@@ -82,7 +74,7 @@ Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Fak
     \begin{center}
         \includegraphics[width=8cm]{images/StreudiagrammFak3.pdf}
     \end{center}
-    \caption{Streudiagramm und Regressionsgerade der Regression mit dem Faktor \textit{Heiter}.}
+    \caption{Streudiagramm und Regressionsgerade der Regression mit dem Faktor \textit{Heiter}. Diese liefert die beste Modellanpassung.}
     \label{fig:Faktor3}
 \end{figure}
 
@@ -110,7 +102,7 @@ Es gibt beispielsweise für den Faktor, mit dem schwächsten Korrelationswert, \
 Dahingegen lässt sich eine starke negative Korrelation des Spotify Features \textit{SP\_energy} mit dem Faktor \textit{Ruhig} inhaltlich sinnvoll erschließen.
 Gleiches gilt auch für die Korrelation der Features \textit{SP\_danceability}, \textit{SP\_energy}, \textit{SP\_instrumentalness} und \textit{SP\_valence} mit dem Faktor \textit{Heiter}.
 Jedoch wurde eine größere Abhängigkeit dieser inhaltlich ähnlichen Variablen, vor allem \textit{SP\_danceability} und \textit{SP\_valence} mit dem Faktor \textit{Heiter} erwartet.
-Die Spotify Features \textit{SP\_tempo}, \textit{SP\_liveness}, sowie \textit{SP\_acousticness} korrelieren dagegen nicht signifikant mit einem der Faktoren und sind in keinem Modell enthalten. 
+Die Spotify Features \textit{SP\_tempo}, \textit{SP\_liveness}, sowie \textit{SP\_acousticness} korrelieren dagegen nicht signifikant mit einem der Faktoren und werden in keinem Modell aufgenommen. 
 Das Feature \textit{SP\_tempo} beschreibt, wie die schon im vorhinein von der Analyse nicht berücksichtigten Features von Spotify, eher die Struktur eines Musikstücks und ähnelt inhaltlich somit keinem der subjektiver Empfindungen entsprechenden Bewertungen aus dem Datensatz ``10 Songs für die Insel''.
 \textit{SP\_liveness} und \textit{SP\_acousticness} entsprechen inhaltlich ebenfalls keinem der ``Insel''-Variablen.  
 
