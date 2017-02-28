@@ -1,15 +1,15 @@
 \section*{Einleitung}
 \label{sec:Einleitung}
 
-Im Digitalen Zeitalter ist es immer wichtiger große Datenmengen zu untersuchen und speziell an Informationen über deren Inhalt zu gelangen.
-Mit Hilfe verschiedener Techniken ist es möglich, vielfältige Informationen über den Inhalt von digitalen Daten zu extrahieren, wodurch sie sich für eine informationstechnische Weiterverarbeitung eigenen.
-Die Entwicklung solcher Methoden für musikalische Inhalte allgemein ist Gegenstand des interdisziplinären Forschungsgebiets \textit{Music Information Retrieval}, kurz \textit{MIR}.
-So ist es beispielsweise möglich, mit computergestützten Verfahren, grundlegende Metriken wie das Tempo, die Tonart oder das Tongeschlecht aus einem Musikstück zu extrahieren\,\cite{Casey2008}.
+Im digitalen Zeitalter ist es immer wichtiger große Datenmengen zu untersuchen und speziell an Informationen über deren Inhalt zu gelangen.
+Mit Hilfe verschiedener Techniken ist es möglich, vielfältige Informationen über den Inhalt von digitalen Daten zu extrahieren, wodurch sie sich für eine informationstechnische Weiterverarbeitung eignen.
+Die Entwicklung solcher Methoden für musikalische Inhalte ist Gegenstand des interdisziplinären Forschungsgebiets \textit{Music Information Retrieval}, kurz \textit{MIR}.
+Mit computergestützten Verfahren ist damit möglich, grundlegende Metriken wie das Tempo, die Tonart oder das Tongeschlecht aus einem Musikstück zu extrahieren\,\cite{Casey2008}.
 Aufbauend auf diesen Metriken lassen sich komplexere Attribute vorhersagen, welche subjektiven Empfindungen entsprechen\,\cite{Sturm2013}.
 Als Beispiel wäre die Fröhlichkeit, die Tanzbarkeit oder die Komplexität eines Musikstücks zu nennen.
-In diesem Kontext gewonnene Informationen werden auch \textit{Audio Features} genannt.
+Die in diesem Kontext gewonnenen Informationen werden auch \textit{Audio Features} genannt.
 Unter anderem lassen sich Audio Features in Beziehung zueinander stellen, um so Zusammenhänge zwischen den zugrunde liegenden Daten ermitteln zu können.
-So ist es beispielsweise möglich, automatisch Playlisten für einen Nutzer zu erstellen oder dem Nutzer Musik vorzuschlagen, die er noch nicht besitzt, welche aber seinem Musikgeschmack entspricht.
+Damit besteht die Möglichkeit, automatisch Playlisten für einen Nutzer zu erstellen oder Musik vorzuschlagen, die er noch nicht besitzt, welche aber seinem Musikgeschmack entspricht.
 
 %Das Streamen von medialen Inhalten über das Internet ist im gesellschaftlichen Alltag kaum noch wegzudenken. % kürzen?
 Der On-Demand Streaming-Dienst \textit{Spotify}\footnote{Website: \url{https://www.spotify.com/}} hat sich auf Audiodaten spezialisiert.
@@ -17,13 +17,13 @@ Er stellt seinen Nutzern eine umfangreiche Sammlung von Musik zum Hören über d
 \textit{Spotify} extrahiert aus der Musik \textit{Audio Features} und macht diese über eine Schnittstelle öffentlich abrufbar.
 Aufbauend darauf ist eine Vielzahl an informationstechnischer Weiterverarbeitung möglich, für welche jedoch der Wahrheitsgehalt der abgerufenen Informationen einen großen Stellenwert hat.
 Dies führt zu der schwer greifbaren und aktuellen Problematik im Feld des \textit{MIR}:
-Wie lassen sich die Ergebnisse unterschiedlicher \textit{MIR} Verfahren und Algorithmen bewerten und mit einander vergleichen? \cite{Downie2004}
+Wie lassen sich die Ergebnisse unterschiedlicher \textit{MIR} Verfahren und Algorithmen bewerten und miteinander vergleichen? \cite{Downie2004}
 
 In der Praxis kommen verschiedene Evaluationsverfahren zum Einsatz.
-Ein Verfahren mit Blick auf \textit{Gültigkeit}, \textit{Zuverlässigkeit} und \textit{Effizienz} \cite{Urbano_2013}, wird im Folgenden genauer beschrieben.
-Durch \textit{MIR} extrahierte \textit{Audio Features} werden einer Aggregation von Vergleichsinformationen gegenübergestellt und mit ihr abgeglichen (\textit{Gültigkeit}), um eine Aussage über ihren Wahrheitsgehalt treffen zu können.
+Ein Verfahren mit Blick auf \textit{Gültigkeit}, \textit{Zuverlässigkeit} und \textit{Effizienz} \cite{Urbano_2013} wird im Folgenden genauer beschrieben.
+Durch \textit{MIR} extrahierte \textit{Audio Features} werden einer Aggregation von Vergleichsinformationen gegenübergestellt und mit diesen abgeglichen (\textit{Gültigkeit}), um eine Aussage über ihren Wahrheitsgehalt treffen zu können.
 Damit die aggregierten Daten als Vergleichsmaß herangezogen werden können, muss zuvor sichergestellt werden, dass sie sowohl inhaltlich als auch quantitativ einem Mindestmaß an Qualität entsprechen (\textit{Zuverlässigkeit}).
-Um die Validität dieser Vergleichsdaten sicher zu stellen werden diese häufig von Menschen bewertet.
+Um die Validität dieser Vergleichsdaten sicher zu stellen, werden diese häufig von Menschen bewertet.
 Ein solcher Datensatz wird auch als \textit{ground truth} bezeichnet.
 Unter \textit{Effizienz} versteht man die Wiederverwertbarkeit der ground truth Daten für verschiedene Studien und Forschergruppen.
 Um nun die Qualität extrahierter Audio Features eines Algorithmus zu bewerten, werden diese mit den \textit{ground truth} Daten verglichen.
@@ -31,5 +31,5 @@ Um nun die Qualität extrahierter Audio Features eines Algorithmus zu bewerten, 
 
 In dieser Studie werden die Audio Features von \textit{Spotify} nach diesem Prinzip auf ihre Qualität geprüft.
 Dazu werden sie ebenfalls mit einem von Menschen bewerteten Datensatz verglichen.
-Dies führt uns zu folgender Hypothese:
-Die von \textit{Spotify} bereitgestellten \textit{Audio Features} korrelieren mit einem Korrelationskoeffizienten von 0,5 oder mehr mit den subjektiven Bewertungen von Menschen.
+Dies führt zu folgender Hypothese:
+Die von \textit{Spotify} bereitgestellten \textit{Audio Features} korrelieren mit den subjektiven Bewertungen von Menschen mit einem Korrelationskoeffizienten von mindestens 0,5.

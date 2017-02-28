@@ -1,21 +1,22 @@
 \section*{Methoden}
 \label{sec:Methoden}
 
+%diesen teil auch im präteritum schreiben! einheitlich
 Um die Hypothese zu überprüfen,
 % ob und wie stark die Ergebnisse der Spotify MIR Algorithmen mit den subjektiven Bewertungen durch Probanden korrelieren, 
-wird ein Datensatz von Probanden bewerteter Musikstücke mit den von Spotify erzeugten Audio Features der selben Musikstücke verglichen.
-Mit Hilfe statistischer Methoden wird überprüft wie stark die beiden Datensätze korrelieren.
+wurde ein Datensatz von Probanden bewerteter Musikstücke mit den von Spotify erzeugten Audio Features der selben Musikstücke verglichen.
+Mit Hilfe statistischer Methoden wurde überprüft, wie stark die beiden Datensätze korrelieren.
 Bei dieser Studie handelt es sich um eine Zweitverwertung des Datensatzes einer anderen Studie, daher mussten die Daten zunächst für diese Studie neu strukturiert und angepasst werden.
 Der verwendete Datensatz stammt aus einer Studie, in der die 45 Probanden angeben sollten welche 10 Songs sie mit auf eine einsame Insel nehmen würden.
 Außerdem mussten sie zu den von ihnen gewählten Songs folgende 13 verschiedene Attribute bewerten: Anspruchsvoll, Einfach, Emotional, Entspannend, Erregend, Fröhlich, Intellektuell, Intensiv, Komplex, Sanft, Tanzbar, Traurig und Warm.
 Dieser Datensatz stellt unsere \textit{ground truth} Daten da.
 
 Einige der Variablen, wie Fröhlich und Traurig oder Warm und Sanft, stehen augenscheinlich in Beziehung zueinander oder beschreiben eine ähnliche subjektive Empfindung.
-Daher liegt die Vermutung nahe, dass eine Datenreduktion der Attribute möglich ist.
-Mit Hilfe einer Faktorenanalyse soll so aus den 13 Attributen, die von den Probanden bewertet wurden, einige wenige Faktoren zur weiteren Betrachtung erstellt werden.
-Dazu wird eine Hauptkomponentenfaktorenanalyse mit anschließender orthogonaler Achsenrotation (Varimax Verfahren) verwendet.
-Um die Korrelation zwischen den Spotify Audio Features und den Faktoren des "`Insel"' Datensatzes zu untersuchen wird anschließend eine schrittweise multiple Regression durchgeführt.
-Die Faktoren werden dabei als abhängige Variable verwendet und die Attribute des Spotify Algorithmus als unabhängige Variablen.
+Daher lag die Vermutung nahe, dass eine Datenreduktion der Attribute möglich ist.
+Mit Hilfe einer Faktorenanalyse sollten so die 13 Attribute, die von den Probanden bewertet wurden, auf wenige Faktoren zur weiteren Betrachtung reduziert werden.
+Dazu wurde eine Hauptkomponentenfaktorenanalyse mit anschließender orthogonaler Achsenrotation (Varimax Verfahren) verwendet.
+Um die Korrelation zwischen den Spotify Audio Features und den Faktoren des "`10 Songs für die einsame Insel"' Datensatzes zu untersuchen, wurde anschließend eine schrittweise multiple Regression durchgeführt.
+Die Faktoren wurden dabei als abhängige Variable und die Attribute des Spotify Algorithmus als unabhängige Variablen verwendet.
 
 
 
@@ -23,14 +24,14 @@ Die Faktoren werden dabei als abhängige Variable verwendet und die Attribute de
 \label{sec:Datenaufbereitung}
 
 
-Der "`Insel"' Datensatz enthielt 45 Datenpunkte in denen sich je ein Proband mit seinen 10 Songs und deren Bewertungen befindet.
-Ein Problem, das sofort ins Auge fiel, war, dass der Datensatz schwer maschinenlesbar ist. 
+Der "`Insel"' Datensatz enthielt 45 Datenpunkte, in denen sich je ein Proband mit seinen 10 Songs und deren Bewertungen befand.
+Als problematisch stellte sich jedoch heraus, dass der Datensatz schwer maschinenlesbar ist. 
 Zum Beispiel sind die Songtitel und der Interpret beliebig vermischt und folgen keinem klaren Schema.
-Um eine Analyse der einzelnen Songs zu ermöglichen, mussten zunächst mit Hilfe eines Python Skripts aus dem bestehenden Datensatz die einzelnen Songs und deren Bewertungen extrahieren werden.
+Um eine Analyse der einzelnen Songs zu ermöglichen, wurden zunächst mit Hilfe eines Python Skripts aus dem bestehenden Datensatz die einzelnen Songs und deren Bewertungen extrahiert.
 Anschließend wurden die Daten zu insgesamt 450 neuen Datenpunkten zusammengefasst, die jeweils einen Song und seine Bewertungen enthalten.
 Zusätzlich wurden die Daten aus dem veralteten CSV Format in das deutlich einfacher maschinell lesbare JSON Format konvertiert.
 
-Um die Spotify Audio Features für einen Song zu ermitteln muss der Spotify Programmierschnittstelle (API) die dem Song entsprechende Spotify ID übergeben werden.
+Um die Spotify Audio Features für einen Song zu ermitteln, musste der Spotify Programmierschnittstelle (API) die dem Song entsprechende Spotify ID übergeben werden.
 Diese musste zunächst für jeden Song ermittelt werden.
 Da die Songtitel und Interpreten maschinell nicht einfach und klar voneinander trennbar sind, wurde die Spotify Suchfunktion verwendet.
 Dieser kann eine gemischte Zeichenkette mit Titel und Interpret übergeben werden.
@@ -38,7 +39,7 @@ Sie liefert daraufhin Informationen über die Treffer der gefundenen Songs in de
 Die ID des ersten gefunden Treffers wurde anschließend zu dem entsprechenden Datenpunkt des bisherigen Datensatzes hinzugefügt.
 Insgesamt 50 der gesuchten Songs konnten entweder auf Grund der vermischten Sucheingabe oder wegen Fehlens in der Spotify Datenbank nicht gefunden werden.
 \footnote{Der Zugriff erfolgte am 23.2.2017 gegen 16:00 Uhr.}
-Auch dieser Schritt wurde mit einem Python Script automatisiert durchgeführt.
+Auch dieser Schritt wurde mit einem Python Skript automatisiert durchgeführt.
 Dafür wurde die Spotipy \footnote{Spotipy Programmbibliothek: \url{https://github.com/plamere/spotipy}} Python Bibliothek verwendet, welche einen einfachen Zugriff auf die Spotify Web Schnittstellen ermöglicht.
 Nach diesem Schritt enthielt der neue Datensatz 400 Songs mit den Probandenbewertungen und der Spotify ID.
 
@@ -46,26 +47,26 @@ Bei der Durchsicht des Datensatzes fiel auf, dass es sich bei einigen der von Sp
 Teilweise wurden auch Instrumental Versionen oder Cover Versionen der Songs gefunden.
 Stichproben ergaben, dass die Original Versionen dieser Songs nicht in der Spotify Datenbank vorhanden waren.
 Aus diesem Grund wurde im Anschluss eine Datenvalidierung durchgeführt.
-Dabei wurde ein einfacher Stringvergleich zwischen dem Originaltitel des "`10 Songs für die einsame Insel"' Datensatzes und einer Kombination aus den von Spotify gefundenen Titel und Interpreten durchgeführt.
-Eine Ähnlichkeit der Zeichenketten von 60\% führte zu einem guten Kompromiss zwischen Genauigkeit und Freiheitsgrad.
+Dabei wurde ein einfacher Stringvergleich zwischen dem Originaltitel des "Insel"' Datensatzes und einer Kombination aus den von Spotify gefundenen Titel und Interpreten unternommen.
+Eine Ähnlichkeit der Zeichenketten von 60\% führte zu einem guten Kompromiss zwischen der Genauigkeit und dem Freiheitsgrad.
 Dadurch wurden aus dem Datensatz weitere 49 Einträge entfernt, was zu einer Gesamtanzahl von 351 Datenpunkten führte.
 
-Als nächsten Schritt wurde mit Hilfe der Spotipy Bibliothek der Spotify Audio Feature Web API die ermittelten Spotify IDs übergeben.
+Als nächsten Schritt wurden mit Hilfe der Spotipy Bibliothek die ermittelten Spotify IDs an die Spotify Audio Feature Web API  übergeben.
 Dafür muss man sich zunächst bei Spotify als Developer anmelden, um eine Autorisierung zu erhalten, mit der man auf die Spotify Audio Feature Web API zugreifen kann.
 Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt\,\footnote{Dokumentation: \url{https://developer.spotify.com/web-api/get-audio-features/}} zurück.
 Aus diesem wurden die für diese Studie relevanten Audio Features extrahiert und in den entsprechenden Eintrag des Datensatzes eingefügt.
 \footnote{Der Zugriff erfolgte am 23.2.2017 gegen 16:15 Uhr.}
-Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte durchgeführt.
+Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte wiederholt.
 
 Von den insgesamt 13 von Spotify zur Verfügung gestellten Audio Feature Attributen wurden für die Analyse nur 9 verwendet.
-Da die Bewertungen der Umfrage der verwendeten Studie subjektiven Einschätzungen entsprechen, wurden Attribute, welche die Struktur eines Musikstücks beschreiben, nicht in die statistische Analyse mit einbezogen.
-Zu diesen Attributen gehören Länge des Songs ("`duration\_ms"'), Taktangabe ("`time\_signature"') sowie  Tonklasse ("`key"').
-Außerdem wurde das Audio Feature "`mode"' (Tongeschlecht) nicht berücksichtigt. Es handelt sich dabei um eine dichotome Variable, welche für die Regression ungeeignet ist.
+Da die Bewertungen der Umfrage der verwendeten Studie subjektiven Einschätzungen entsprechen, wurden Attribute, welche die Struktur eines Musikstücks beschreiben, nicht in die statistische Analyse miteinbezogen.
+Zu diesen Attributen gehören die Länge des Songs (\textit{duration\_ms}), die Taktangabe (\textit{time\_signature}) sowie die Tonklasse (\textit{key}).
+Zusätzlich wurde das Audio Feature \textit{mode} (Tongeschlecht) nicht berücksichtigt. Es handelt sich dabei um eine dichotome Variable, welche für die Regression ungeeignet ist.
 Die verwendeten Spotify Audio Features sind im folgenden kurz beschrieben:
 
 \begin{description}
     \item[acousticness]
-        Beschreibt die Wahrscheinlich, dass  es sich um einen Akustiksong handelt.
+        Beschreibt die Wahrscheinlichkeit, dass  es sich um einen Akustiksong handelt.
     \item[danceability]
         Gibt die Tanzbarkeit des Songs an.
         Wird aus verschiedenen musikalischen Elementen wie Tempo, Rhythmusstabilität, Beatstärke oder Regelmäßigkeit ermittelt.
@@ -77,18 +78,17 @@ Die verwendeten Spotify Audio Features sind im folgenden kurz beschrieben:
     \item[liveness]
         Ermittelt die Anwesenheit eines Publikums beziehungsweise ob ein Song in einer Livesituation aufgenommen wurde.
     \item[loudness]
-        Gemittelte Lautstärke des Songs in Dezibel.
+        Gibt die gemittelte Lautstärke des Songs in Dezibel an.
     \item[speechiness]
         Gibt an, wie viel innerhalb des Songs gesprochen wird.
         Unterscheidet fließend zwischen Podcasts oder Hörbücher, Musik mit hohem Anteil an Sprache (wie zum Beispiel Rap) und Musik mit geringem bis gar keinem Sprachanteil.
     \item[tempo]
-        Anzahl der Beats per Minute (Bpm).
+        Gibt die Anzahl der Beats per Minute (Bpm) an.
     \item[valence]
-        Maß für die musikalische Fröhlichkeit bzw. Traurigkeit eines Songs.
-        Fließender Übergang von fröhlich oder heiter nach traurig oder deprimierend.
+        Beschreibt die musikalische Fröhlichkeit bzw. Traurigkeit eines Songs mit fließendem Übergang von fröhlich oder heiter 			nach traurig oder deprimierend.
 \end{description}
 
-Da die weitere statistische Auswertung des Datensatzes in der SPSS Software geschah, mussten die Daten anschließend vom JSON in das CSV Format konvertiert werden. Dieses ist das einzige Format das SPSS akzeptiert.
+Da die weitere statistische Auswertung des Datensatzes in der SPSS Software erfolgte, mussten die Daten anschließend vom JSON in das CSV Format konvertiert werden. Dieses ist das einzige Format das SPSS akzeptiert.
 
-Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com veröffentlicht \footnote{Code Repository:\hfill \url{https://github.com/Bendrien/SpotifyMIR-Evaluation/tree/master/python}}.
+Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com \footnote{Code Repository:\hfill \url{https://github.com/Bendrien/SpotifyMIR-Evaluation/tree/master/python}} veröffentlicht.
 
