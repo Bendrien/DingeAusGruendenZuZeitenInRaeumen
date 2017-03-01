@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "Running Rohdaten Parser."
 python3 RohdatenParser.py
 echo "Done!"

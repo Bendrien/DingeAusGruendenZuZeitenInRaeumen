@@ -1,13 +1,19 @@
-Dinge aus Gründen zu Zeiten in Räumen
-=====================================
+Spotify Mir Evaluation
+======================
 
-README
+
+Dieses Repository enthält die Daten und das Paper, die im Rahmen des Kurses Empirisch-wissenschaftliches Arbeiten entstanden sind.
+
+
+Inhalt
 ------
 
-Repo für Wissenschaftliches Arbeiten
+* `latex/` Enthält die Latex Datei zur Erstellung des Exposés und des Papers.
+* `python/` Enthält die verwendeten Daten, sowie die Skripte zu deren Aufbereitung.
 
 
 LICENCE
 -------
 
-This repository is licenced under the [do what you want but think about the Omen](https://www.youtube.com/watch?v=b-_wE0mJU5Y&feature=youtu.be&t=9s) licence.
+Der Python Code im Verzeichnis `python/` steht unter der _GNU General Public License v3.0_.
+Eine Kopie des Lizenztextes ist in der `LICENSE.md` Datei zu finden.
