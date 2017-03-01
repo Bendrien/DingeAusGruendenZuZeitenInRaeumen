@@ -47,7 +47,7 @@ Teilweise wurden auch Instrumental Versionen oder Cover Versionen der Songs gefu
 Stichproben ergaben, dass die Original Versionen dieser Songs nicht in der Spotify Datenbank vorhanden waren.
 Aus diesem Grund wurde im Anschluss eine Datenvalidierung durchgeführt.
 Dabei wurde ein einfacher Stringvergleich zwischen dem Originaltitel des "`Insel"' Datensatzes und einer Kombination aus den von Spotify gefundenen Titel und Interpreten unternommen.
-Eine Ähnlichkeit der Zeichenketten von 60\% führte zu einem guten Kompromiss zwischen der Genauigkeit und dem Freiheitsgrad.
+Eine Ähnlichkeit der Zeichenketten von 60\,\% führte zu einem guten Kompromiss zwischen der Genauigkeit und dem Freiheitsgrad.
 Dadurch wurden aus dem Datensatz weitere 49 Einträge entfernt, was letztendlich zu einer Gesamtanzahl von 351 Datenpunkten führte.
 
 Als nächsten Schritt wurden mit Hilfe der Spotipy Bibliothek die ermittelten Spotify IDs an die Spotify Audio Feature Web API  übergeben.
@@ -86,7 +86,8 @@ Die verwendeten Spotify Audio Features sind im folgenden kurz beschrieben:
         Beschreibt die musikalische Fröhlichkeit bzw. Traurigkeit eines Songs mit fließendem Übergang von fröhlich oder heiter 			nach traurig oder deprimierend.
 \end{description}
 
-Da die weitere statistische Auswertung des Datensatzes in der SPSS Software erfolgte, mussten die Daten noch vom JSON in das CSV Format konvertiert werden. Dieses ist das einzige Format das SPSS akzeptiert.
+Da die weitere statistische Auswertung des Datensatzes in der SPSS Software erfolgte, mussten die Daten noch vom JSON in das CSV Format konvertiert werden.
+Dieses ist das einzige Format das SPSS akzeptiert.
 
 Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com\footnote{Code Repository:\hfill \url{https://github.com/Bendrien/SpotifyMIR-Evaluation/tree/master/python}} veröffentlicht.
 
