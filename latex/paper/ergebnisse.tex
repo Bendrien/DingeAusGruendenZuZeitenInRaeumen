@@ -7,7 +7,7 @@ Entsprechend dem Kaiser-Kriterium für signifikante Faktoren ab einem Eigenwert 
 Die vier Faktoren erklären insgesamt 67\,\% der Gesamtvarianz.
 Wenige Variablen laden dabei relativ stark in einen Faktor, während sie gleichzeitig eher schwach in die übrigen Faktoren laden.
 Einzig die Variable \textit{Emotional} lädt in keinen der Faktoren stark und wird aus diesem Grund für die inhaltliche Beschreibung der erzeugten Faktoren nicht berücksichtigt.
-Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} für den 1. Faktor, \textit{Niveauvoll} für den 2. Faktor, \textit{Heiter} für den 3. Faktor und \textit{Energisch} für den 4. Faktor (vgl. Tabelle \ref{tab:faktoren}).   
+Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als $Ruhig_f$ für den 1. Faktor, $Niveauvoll_f$ für den 2. Faktor, $Heiter_f$ für den 3. Faktor und $Energisch_f$ für den 4. Faktor (vgl. Tabelle \ref{tab:faktoren}).   
 
 
 \begin{table}[htbp]
@@ -41,14 +41,14 @@ Die vier erzeugten Faktoren werden inhaltlich gekennzeichnet als \textit{Ruhig} 
 
 Die Regressionen der ermittelten Faktoren mit den Features von Spotify liefern Modelle mit sehr guten Signifikanzen nahe 0 (vgl. Tabelle \ref{tab:regression}).
 Als Kriterium für das Aufnehmen einer Variable in ein Modell darf maximal ein Signikanzwert von 0,05 erreicht werden.  
-Das Modell mit der höchsten Güte erhalten wir bei der Regression mit dem Faktor \textit{Heiter}.
+Das Modell mit der höchsten Güte erhalten wir bei der Regression mit dem Faktor $Heiter_f$.
 23,1\,\% der Varianz wird vom Modell mit den Variablen \textit{danceability}, \textit{energy}, \textit{instrumentalness} und \textit{valence} gedeckt.
 Die Variable \textit{energy} ist in dem Modell am stärksten gewichtet, gefolgt von den Variablen \textit{danceability},  \textit{instrumentalness} und \textit{valence}.
 Das Streudiagramm dieses Modells ist in Abb. \ref{fig:Faktor3} zu sehen.    
-Ein Modell mit einem ähnlich hohem Bestimmtheitsmaß $R^2$ gibt die Regression mit dem Faktor \textit{Ruhig} aus, die 21,5\,\% der Varianz deckt.
+Ein Modell mit einem ähnlich hohem Bestimmtheitsmaß $R^2$ gibt die Regression mit dem Faktor $Ruhig_f$ aus, die 21,5\,\% der Varianz deckt.
 Enthalten in diesem Modell ist die Variable \textit{energy}, die mit einer negativen Effektstärke etwa vier mal stärker gewichtet ist als die zweite in dem Modell enthaltenen Variable \textit{speechiness}.
-Deutlich schlechtere Modellanpassungen liefern die Regressionen mit den Faktoren \textit{Niveauvoll} und \textit{Energisch}.
-Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Faktor \textit{Energisch} und nur 0,038 bei der Regression mit dem Faktor \textit{Niveauvoll}.
+Deutlich schlechtere Modellanpassungen liefern die Regressionen mit den Faktoren $Niveauvoll_f$ und $Energisch_f$.
+Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Faktor $Energisch_f$ und nur 0,038 bei der Regression mit dem Faktor $Niveauvoll_f$.
 
 \begin{table}[htbp]
     \centering
@@ -88,7 +88,7 @@ Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Fak
     \begin{center}
         \includegraphics[width=8cm]{images/StreudiagrammFak3.pdf}
     \end{center}
-    \caption{Streudiagramm und Regressionsgerade der Regression mit dem Faktor \textit{Heiter}. Diese liefert die beste Modellanpassung.}
+    \caption{Streudiagramm und Regressionsgerade der Regression mit dem Faktor $Heiter_f$. Diese liefert die beste Modellanpassung.}
     \label{fig:Faktor3}
 \end{figure}
 
@@ -99,9 +99,9 @@ Wir erhalten ein Modell mit einer Güte von 0,112 bei der Regression mit dem Fak
 Die Modelle der Regressionen sind hochsignifikant.
 Somit ist ein Zusammenhang zwischen den Bewertungen der Probanden und den Features von Spotify vorhanden.
 Die Effektstärken der Modelle sind dagegen eher gering. 
-Während die Regressionen mit den Faktoren \textit{Heiter} und \textit{Ruhig} mit Korrelationskoeffizienten von 0,481 und 0,464 nah an den in der Hypothese formulierten Wert kommen, liegen die Korrelationskoeffizienten für die Regressionen mit den Faktoren  \textit{Energisch} (0,335) und vor allem \textit{Niveauvoll} (0,195) deutlich darunter.
+Während die Regressionen mit den Faktoren $Heiter_f$ und $Ruhig_f$ mit Korrelationskoeffizienten von 0,481 und 0,464 nah an den in der Hypothese formulierten Wert kommen, liegen die Korrelationskoeffizienten für die Regressionen mit den Faktoren  $Energisch_f$ (0,335) und vor allem $Niveauvoll_f$ (0,195) deutlich darunter.
 Die Deutung der Korrelationswerte der erstellten Modelle deckt sich auch mit der Interpretation von Effektstärken von Cohen \cite{cohen1988}.
-Dabei entspricht der Korrelationswert $r$ für die Regression mit dem Faktor \textit{Niveauvoll} einem kleinen Effekt, die übrigen entsprechen immerhin einem mittleren Effekt.
+Dabei entspricht der Korrelationswert $r$ für die Regression mit dem Faktor $Niveauvoll_f$ einem kleinen Effekt, die übrigen entsprechen immerhin einem mittleren Effekt.
 Ein starker Effekt, der bei einem Korrelationswert von mindestens 0,5 vorzufinden ist, wird nicht erreicht.
 Somit kann die in der Hypothese formulierte Annahme einer starken Korrelation der Datensätze mit einem Wert von mindestens 0,5 nicht bestätigt werden. 
 
@@ -112,10 +112,10 @@ Hinzu kommt, dass die Probanden einen besonderen, persönlichen Bezug zu den von
 Eine höhere Anzahl an Bewertungen eines einzelnen Musikstücks durch mehrere Probanden mit anschließender Mittelung würden die in diesem Datensatz vorhandenen Fehler minimieren.
 
 Ein weiterer Grund für die geringe Korrelation könnte die inhaltlich meist nicht direkt entsprechenden Bewertungskriterien beider Datensätze sein.
-Es gibt beispielsweise für den Faktor mit dem schwächsten Korrelationswert (\textit{Niveauvoll}) kein Spotify Feature, das diesem Faktor inhaltlich zugeordnet werden kann.
-Dahingegen lässt sich eine starke negative Korrelation des Spotify Features \textit{energy} mit dem Faktor \textit{Ruhig} inhaltlich sinnvoll erschließen.
-Gleiches gilt auch für die Korrelation der Features \textit{danceability}, \textit{energy}, \textit{instrumentalness} und \textit{valence} mit dem Faktor \textit{Heiter}.
-Jedoch wurde eine größere Abhängigkeit dieser inhaltlich ähnlichen Variablen, vor allem \textit{danceability} und \textit{valence}, mit dem Faktor \textit{Heiter}, erwartet.
+Es gibt beispielsweise für den Faktor mit dem schwächsten Korrelationswert ($Niveauvoll_f$) kein Spotify Feature, das diesem Faktor inhaltlich zugeordnet werden kann.
+Dahingegen lässt sich eine starke negative Korrelation des Spotify Features \textit{energy} mit dem Faktor $Ruhig_f$ inhaltlich sinnvoll erschließen.
+Gleiches gilt auch für die Korrelation der Features \textit{danceability}, \textit{energy}, \textit{instrumentalness} und \textit{valence} mit dem Faktor $Heiter_f$.
+Jedoch wurde eine größere Abhängigkeit dieser inhaltlich ähnlichen Variablen, vor allem \textit{danceability} und \textit{valence}, mit dem Faktor $Heiter_f$, erwartet.
 Die Spotify Features \textit{tempo}, \textit{liveness} sowie \textit{acousticness} korrelieren dagegen nicht signifikant mit einem der Faktoren und werden in keinem Modell aufgenommen. 
 Das Audio Feature \textit{tempo} beschreibt eher die Struktur eines Musikstücks, ähnlich wie die schon im Vorhinein von der Analyse nicht berücksichtigten Audio Features (\textit{duration\_ms}, \textit{time\_signature} und \textit{key}).
 Daher ähnelt das Feature \textit{tempo} auch inhaltlich keinem der subjektiver Empfindungen entsprechenden Bewertungen aus dem "`Insel"' Datensatz.
