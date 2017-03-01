@@ -12,7 +12,7 @@ Inhalt
 * `python/` Enthält die verwendeten Daten, sowie die Skripte zu deren Aufbereitung.
 
 
-LICENCE
+LICENSE
 -------
 
 Der Python Code im Verzeichnis `python/` steht unter der _GNU General Public License v3.0_.
