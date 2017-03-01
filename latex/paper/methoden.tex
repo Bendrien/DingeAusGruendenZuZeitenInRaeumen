@@ -24,7 +24,7 @@ Die Faktoren wurden dabei als abhängige Variable und die Attribute des Spotify 
 \label{sec:Datenaufbereitung}
 
 
-Der "`Insel"' Datensatz enthielt 45 Datenpunkte, in denen sich je ein Proband mit seinen 10 Songs und deren Bewertungen befand.
+Der "`Insel"' Datensatz enthält 45 Datenpunkte, in denen sich je ein Proband mit seinen 10 Songs und deren Bewertungen befindet.
 Als problematisch stellte sich jedoch heraus, dass der Datensatz schwer maschinenlesbar ist. 
 Zum Beispiel sind die Songtitel und der Interpret beliebig vermischt und folgen keinem klaren Schema.
 Um eine Analyse der einzelnen Songs zu ermöglichen, wurden zunächst mit Hilfe eines Python Skripts aus dem bestehenden Datensatz die einzelnen Songs und deren Bewertungen extrahiert.
@@ -38,30 +38,28 @@ Dieser kann eine gemischte Zeichenkette mit Titel und Interpret übergeben werde
 Sie liefert daraufhin Informationen über die Treffer der gefundenen Songs in der Spotify Datenbank mitsamt der Spotify IDs.
 Die ID des ersten gefunden Treffers wurde anschließend zu dem entsprechenden Datenpunkt des bisherigen Datensatzes hinzugefügt.
 Insgesamt 50 der gesuchten Songs konnten entweder auf Grund der vermischten Sucheingabe oder wegen Fehlens in der Spotify Datenbank nicht gefunden werden.
-\footnote{Der Zugriff erfolgte am 23.2.2017 gegen 16:00 Uhr.}
-Auch dieser Schritt wurde mit einem Python Skript automatisiert durchgeführt.
-Dafür wurde die Spotipy \footnote{Spotipy Programmbibliothek: \url{https://github.com/plamere/spotipy}} Python Bibliothek verwendet, welche einen einfachen Zugriff auf die Spotify Web Schnittstellen ermöglicht.
+Auch dieser Schritt wurde mit einem Python Skript automatisiert durchgeführt.\footnote{Der Zugriff erfolgte am 23. Februar 2017 gegen 16:00 Uhr.}
+Dafür wurde die Spotipy\footnote{Spotipy Programmbibliothek: \url{https://github.com/plamere/spotipy}} Python Bibliothek verwendet, welche einen einfachen Zugriff auf die Spotify Web Schnittstellen ermöglicht.
 Nach diesem Schritt enthielt der neue Datensatz 400 Songs mit den Probandenbewertungen und der Spotify ID.
 
 Bei der Durchsicht des Datensatzes fiel auf, dass es sich bei einigen der von Spotify gefundenen Ergebnissen um völlig andere Songs handelte.
 Teilweise wurden auch Instrumental Versionen oder Cover Versionen der Songs gefunden.
 Stichproben ergaben, dass die Original Versionen dieser Songs nicht in der Spotify Datenbank vorhanden waren.
 Aus diesem Grund wurde im Anschluss eine Datenvalidierung durchgeführt.
-Dabei wurde ein einfacher Stringvergleich zwischen dem Originaltitel des "Insel"' Datensatzes und einer Kombination aus den von Spotify gefundenen Titel und Interpreten unternommen.
+Dabei wurde ein einfacher Stringvergleich zwischen dem Originaltitel des "`Insel"' Datensatzes und einer Kombination aus den von Spotify gefundenen Titel und Interpreten unternommen.
 Eine Ähnlichkeit der Zeichenketten von 60\% führte zu einem guten Kompromiss zwischen der Genauigkeit und dem Freiheitsgrad.
-Dadurch wurden aus dem Datensatz weitere 49 Einträge entfernt, was zu einer Gesamtanzahl von 351 Datenpunkten führte.
+Dadurch wurden aus dem Datensatz weitere 49 Einträge entfernt, was letztendlich zu einer Gesamtanzahl von 351 Datenpunkten führte.
 
 Als nächsten Schritt wurden mit Hilfe der Spotipy Bibliothek die ermittelten Spotify IDs an die Spotify Audio Feature Web API  übergeben.
 Dafür muss man sich zunächst bei Spotify als Developer anmelden, um eine Autorisierung zu erhalten, mit der man auf die Spotify Audio Feature Web API zugreifen kann.
-Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt\,\footnote{Dokumentation: \url{https://developer.spotify.com/web-api/get-audio-features/}} zurück.
-Aus diesem wurden die für diese Studie relevanten Audio Features extrahiert und in den entsprechenden Eintrag des Datensatzes eingefügt.
-\footnote{Der Zugriff erfolgte am 23.2.2017 gegen 16:15 Uhr.}
+Für jede angefragte ID liefert die Spotify Audio Feature Web API ein JSON Objekt\footnote{Dokumentation: \url{https://developer.spotify.com/web-api/get-audio-features/}} zurück.
+Aus diesem wurden die für diese Studie relevanten Audio Features extrahiert und in den entsprechenden Eintrag des Datensatzes eingefügt.\footnote{Der Zugriff erfolgte am 23. Februar 2017 gegen 16:15 Uhr.}
 Dieser Vorgang wurde entsprechend für alle 351 Datenpunkte wiederholt.
 
 Von den insgesamt 13 von Spotify zur Verfügung gestellten Audio Feature Attributen wurden für die Analyse nur 9 verwendet.
 Da die Bewertungen der Umfrage der verwendeten Studie subjektiven Einschätzungen entsprechen, wurden Attribute, welche die Struktur eines Musikstücks beschreiben, nicht in die statistische Analyse miteinbezogen.
 Zu diesen Attributen gehören die Länge des Songs (\textit{duration\_ms}), die Taktangabe (\textit{time\_signature}) sowie die Tonklasse (\textit{key}).
-Zusätzlich wurde das Audio Feature \textit{mode} (Tongeschlecht) nicht berücksichtigt. Es handelt sich dabei um eine dichotome Variable, welche für die Regression ungeeignet ist.
+Zusätzlich wurde das Audio Feature \textit{mode} (Tongeschlecht) nicht berücksichtigt. Es handelt sich dabei um eine dichotome Variable, welche für eine Regression ungeeignet ist.
 Die verwendeten Spotify Audio Features sind im folgenden kurz beschrieben:
 
 \begin{description}
@@ -88,7 +86,7 @@ Die verwendeten Spotify Audio Features sind im folgenden kurz beschrieben:
         Beschreibt die musikalische Fröhlichkeit bzw. Traurigkeit eines Songs mit fließendem Übergang von fröhlich oder heiter 			nach traurig oder deprimierend.
 \end{description}
 
-Da die weitere statistische Auswertung des Datensatzes in der SPSS Software erfolgte, mussten die Daten anschließend vom JSON in das CSV Format konvertiert werden. Dieses ist das einzige Format das SPSS akzeptiert.
+Da die weitere statistische Auswertung des Datensatzes in der SPSS Software erfolgte, mussten die Daten noch vom JSON in das CSV Format konvertiert werden. Dieses ist das einzige Format das SPSS akzeptiert.
 
-Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com \footnote{Code Repository:\hfill \url{https://github.com/Bendrien/SpotifyMIR-Evaluation/tree/master/python}} veröffentlicht.
+Der gesamte Code, der für die Aufbereitung der Daten geschrieben wurde, ist unter einer Open Source Lizenz auf GitHub.com\footnote{Code Repository:\hfill \url{https://github.com/Bendrien/SpotifyMIR-Evaluation/tree/master/python}} veröffentlicht.
 
